@@ -3,7 +3,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 
 var Global
-var speed = 3000;
+var speed = 13000;
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.y = 0
