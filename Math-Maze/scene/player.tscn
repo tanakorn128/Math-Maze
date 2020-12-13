@@ -103,6 +103,7 @@ extents = Vector2( 5.97531, 10.2808 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
 frames = SubResource( 14 )
 animation = "idle"
 __meta__ = {
