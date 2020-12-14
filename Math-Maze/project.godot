@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Math-Maze"
+run/main_scene="res://scene/world.tscn"
 config/icon="res://icon.png"
 
 [display]
