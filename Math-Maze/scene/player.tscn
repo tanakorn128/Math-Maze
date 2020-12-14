@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/All Assets/Character/red.png" type="Texture" id=2]
+[ext_resource path="res://script/save_game.gd" type="Script" id=3]
+[ext_resource path="res://scene/HUD.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -101,6 +103,7 @@ extents = Vector2( 5.97531, 10.2808 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
+save_game_class = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
@@ -116,3 +119,11 @@ shape = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+position = Vector2( -468.691, -259.544 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
