@@ -1,9 +1,8 @@
 extends KinematicBody2D
+export (Script) var save_game_class
 
 var velocity = Vector2()
-
-var Global
-var speed = 3000;
+var speed = 9000;
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.y = 0
@@ -28,3 +27,13 @@ func _physics_process(delta):
 		$AnimatedSprite.play("idle")
 	move_and_slide(velocity*delta)
 	pass
+func save():
+	var new_save = save_game_class.new()
+	new_save.player_pos = position
+	ResourceSaver.save("res://saves/save_01.tres", new_save)
+	pass
+
+
+func _on_Timer_timeout():
+	save()
+	pass # Replace with function body.

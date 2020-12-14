@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://assets/image/ui/Play.png" type="Texture" id=2]
+[ext_resource path="res://scene/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Menu.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "play"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BackGround" parent="." instance=ExtResource( 3 )]
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_left = 4.0
+margin_top = -2.0
+margin_right = 1029.0
+margin_bottom = 599.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="Tabs"]
+self_modulate = Color( 0.247059, 0.713726, 0.0941176, 1 )
+margin_left = 383.357
+margin_top = 442.321
+margin_right = 630.357
+margin_bottom = 555.321
+rect_scale = Vector2( 1.01993, 1.01993 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Tabs/play"]
+margin_left = 96.1084
+margin_top = 18.0181
+margin_right = 352.108
+margin_bottom = 274.018
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tabs/play"]
+playback_speed = 0.4
+anims/play = SubResource( 1 )
