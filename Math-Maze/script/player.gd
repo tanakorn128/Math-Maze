@@ -2,13 +2,7 @@ extends KinematicBody2D
 export (Script) var save_game_class
 
 var velocity = Vector2()
-<<<<<<< HEAD
-var speed = 9000;
-=======
-
-var Global
 var speed = 13000;
->>>>>>> c9b5d5be20c9e8b6271840c308ea19e78957f6e1
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.y = 0

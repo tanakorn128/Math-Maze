@@ -1,0 +1,363 @@
+﻿[
+{	
+	"Question": "ข้อใดไม่ใช่จำนวนนับ",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "1",
+	"answer3": "2",
+	"answer4": "ไม่มีข้อถูก",
+	"Correct": "0"
+},
+{	
+	"Question": "ข้อใดเป็นจำนวนนับ",
+	"pictures": " ",
+	"answer1": "1",
+	"answer2": "2",
+	"answer3": "3",
+	"answer4": "ถูกทุกข้อ",
+	"Correct": "ถูกทุกข้อ"
+},
+{	
+	"Question": "จำนวนนับในข้อใดน้อยที่สุด",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "1",
+	"answer3": "2",
+	"answer4": "3",
+	"Correct": "1"
+},
+{	
+	"Question": "จำนวนเต็มบวกข้อใดมีค่ามากที่สุด",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "1",
+	"answer3": "2",
+	"answer4": "3",
+	"Correct": "3"
+},
+{	
+	"Question": "จำนวนเต็มบวกข้อใดมีค่าน้อยที่สุด",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "1",
+	"answer3": "2",
+	"answer4": "3",
+	"Correct": "1"
+},
+{	
+	"Question": "จำนวนเต็มลบข้อใดมีค่าน้อยที่สุด",
+	"pictures": " ",
+	"answer1": "-2",
+	"answer2": "-1",
+	"answer3": "0",
+	"answer4": "1",
+	"Correct": "-2"
+},
+{	
+	"Question": "จำนวนเต็มลบข้อใดมีค่ามากที่สุด",
+	"pictures": " ",
+	"answer1": "-2",
+	"answer2": "-1",
+	"answer3": "0",
+	"answer4": "1",
+	"Correct": "-1"
+},
+{	
+	"Question": "ค่าของเลข 3 ใน 253,421 เท่ากับข้อใด",
+	"pictures": " ",
+	"answer1": "3",
+	"answer2": "30",
+	"answer3": "300",
+	"answer4": "3,000",
+	"Correct": "3,000"
+},
+{	
+	"Question": "ค่าของเลข 5 ใน 253,421 เท่ากับข้อใด",
+	"pictures": " ",
+	"answer1": "500",
+	"answer2": "5,000",
+	"answer3": "50,000",
+	"answer4": "500,000",
+	"Correct": "50,000"
+},
+{	
+	"Question": "ค่าของเลข 2 ใน 253,421 เท่ากับข้อใด",
+	"pictures": " ",
+	"answer1": "200",
+	"answer2": "2,000",
+	"answer3": "20,000",
+	"answer4": "200,000",
+	"Correct": "200,000"
+},
+{	
+	"Question": "ค่าของเลข 4 ใน 253,421 เท่ากับข้อใด",
+	"pictures": " ",
+	"answer1": "400",
+	"answer2": "4,000",
+	"answer3": "40,000",
+	"answer4": "400,000",
+	"Correct": "400"
+},
+{	
+	"Question": "ข้อใดเรียงลำดับของ 123,450  253,421 99,800 จากมากไปน้อยได้อย่างถูกต้อง",
+	"pictures": " ",
+	"answer1": "123,450  253,421 99,800",
+	"answer2": "253,421 99,800 123,450",
+	"answer3": "99,800 123,450 253,42",
+	"answer4": "253,421 123,450 99,800",
+	"Correct": "253,421 123,450 99,800"
+},
+{	
+	"Question": "ข้อใดเรียงลำดับของ 123,450  253,421 99,800 จากน้อยไปมากได้อย่างถูกต้อง",
+	"pictures": " ",
+	"answer1": "123,450  253,421 99,800",
+	"answer2": "253,421 99,800 123,450",
+	"answer3": "99,800 123,450 253,42",
+	"answer4": "253,421 123,450 99,800",
+	"Correct": "99,800 123,450 253,42"
+},
+{	
+	"Question": "ค่าประมาณใกล้เคียงจำนวนเต็มล้านของ 15,500,000 คือข้อใด",
+	"pictures": " ",
+	"answer1": "1,500,000",
+	"answer2": "15,000,000",
+	"answer3": "16,000,000",
+	"answer4": "16,500,000",
+	"Correct": "16,000,000"
+},
+{	
+	"Question": "ค่าประมาณใกล้เคียงจำนวนเต็มสิบของ 802,429",
+	"pictures": " ",
+	"answer1": "802,420",
+	"answer2": "802,430",
+	"answer3": "802,400",
+	"answer4": "802,500",
+	"Correct": "802,430"
+},
+{	
+	"Question": "ค่าประมาณใกล้เคียงจำนวนเต็มร้อยของ 802,429",
+	"pictures": " ",
+	"answer1": "802,420",
+	"answer2": "802,430",
+	"answer3": "802,400",
+	"answer4": "802,500",
+	"Correct": "802,400"
+},
+{	
+	"Question": "ค่าประมาณใกล้เคียงจำนวนเต็มพันของ 802,429",
+	"pictures": " ",
+	"answer1": "802,000",
+	"answer2": "802,029",
+	"answer3": "803,000",
+	"answer4": "803,029",
+	"Correct": "802,000"
+},
+{	
+	"Question": "50 x 1,000",
+	"pictures": " ",
+	"answer1": "5,000",
+	"answer2": "50,000",
+	"answer3": "500,000",
+	"answer4": "5,000,000",
+	"Correct": "50,000"
+},
+{	
+	"Question": "60 x 10,000",
+	"pictures": " ",
+	"answer1": "6,000",
+	"answer2": "60,000",
+	"answer3": "600,000",
+	"answer4": "6,000,000",
+	"Correct": "600,000"
+},
+{	
+	"Question": "700 x 10,000",
+	"pictures": " ",
+	"answer1": "70,000",
+	"answer2": "700,000",
+	"answer3": "7,000,000",
+	"answer4": "70,000,000",
+	"Correct": "7,000,000"
+},
+{	
+	"Question": "8,000 x 10,000",
+	"pictures": " ",
+	"answer1": "80,000",
+	"answer2": "800,000",
+	"answer3": "8,000,000",
+	"answer4": "80,000,000",
+	"Correct": "80,000,000"
+},
+{	
+	"Question": "90,000 x 10,000",
+	"pictures": " ",
+	"answer1": "90,000,000",
+	"answer2": "900,000,000",
+	"answer3": "9,000,000,000",
+	"answer4": "90,000,000,000",
+	"Correct": "900,000,000"
+},
+{	
+	"Question": "90,000 x 10,000 ÷ 100",
+	"pictures": " ",
+	"answer1": "9,000,000",
+	"answer2": "90,000,000",
+	"answer3": "900,000,000",
+	"answer4": "9,000,000,000",
+	"Correct": "9,000,000"
+},
+{	
+	"Question": "100 ÷ 25",
+	"pictures": " ",
+	"answer1": "2",
+	"answer2": "3",
+	"answer3": "4",
+	"answer4": "5",
+	"Correct": "4"
+},
+{	
+	"Question": "100 ÷ 25 + 10 - 5  x 2",
+	"pictures": " ",
+	"answer1": "2",
+	"answer2": "3",
+	"answer3": "4",
+	"answer4": "5",
+	"Correct": "4"
+},
+{	
+	"Question": "1,000 x 10 ÷ 100 ",
+	"pictures": " ",
+	"answer1": "10",
+	"answer2": "100",
+	"answer3": "1,000",
+	"answer4": "10,000",
+	"Correct": "100"
+},
+{	
+	"Question": "6 + 7 x 2 ÷ 2 + 5",
+	"pictures": " ",
+	"answer1": "17",
+	"answer2": "18",
+	"answer3": "19",
+	"answer4": "20",
+	"Correct": "18"
+},
+{	
+	"Question": "2 + 2 x 2 ÷ 2 - 2",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "2",
+	"answer3": "4",
+	"answer4": "6",
+	"Correct": "2"
+},
+{	
+	"Question": "3 + 3 x 3 ÷ 3 - 3",
+	"pictures": " ",
+	"answer1": "3",
+	"answer2": "6",
+	"answer3": "9",
+	"answer4": "12",
+	"Correct": "3"
+},
+{	
+	"Question": "5 + 5 x 5 ÷ 5 - 5",
+	"pictures": " ",
+	"answer1": "0",
+	"answer2": "5",
+	"answer3": "10",
+	"answer4": "15",
+	"Correct": "5"
+},
+{	
+	"Question": "(10 + 10 + 10) ÷ 3",
+	"pictures": " ",
+	"answer1": "3",
+	"answer2": "13",
+	"answer3": "10",
+	"answer4": "30",
+	"Correct": "10"
+},
+{	
+	"Question": "(10 x 10 x 10) ÷ 1000",
+	"pictures": " ",
+	"answer1": "1",
+	"answer2": "10",
+	"answer3": "100",
+	"answer4": "1,000",
+	"Correct": "1"
+},
+{	
+	"Question": "(7 + 3 + (10 x 5))",
+	"pictures": " ",
+	"answer1": "53",
+	"answer2": "54",
+	"answer3": "57",
+	"answer4": "60",
+	"Correct": "60"
+},
+{	
+	"Question": "(5 x 1000+ (10 x 5))",
+	"pictures": " ",
+	"answer1": "53",
+	"answer2": "54",
+	"answer3": "57",
+	"answer4": "60",
+	"Correct": "60"
+},
+{	
+	"Question": "((16 ÷ 8) x 20,000)",
+	"pictures": " ",
+	"answer1": "400",
+	"answer2": "4,000",
+	"answer3": "40,000",
+	"answer4": "400,000",
+	"Correct": "40,000"
+},
+{	
+	"Question": "1, 2, 3, 4, 5, 6, 7, ... จำนวนที่ 100 คือจำนวนใด",
+	"pictures": " ",
+	"answer1": "98",
+	"answer2": "99",
+	"answer3": "100",
+	"answer4": "101",
+	"Correct": "100"
+},
+{	
+	"Question": "5, 10, 15, 20, 25, x  จำนวน x คือจำนวนใด",
+	"pictures": " ",
+	"answer1": "30",
+	"answer2": "35",
+	"answer3": "40",
+	"answer4": "45",
+	"Correct": "30"
+},
+{	
+	"Question": "1, 3, 5, 7, 9, 11 , x  จำนวน x คือจำนวนใด",
+	"pictures": " ",
+	"answer1": "12",
+	"answer2": "13",
+	"answer3": "14",
+	"answer4": "15",
+	"Correct": "13"
+},
+{	
+	"Question": "1, 3, 5, 7, 9, ...  จำนวนที่ 86 คือจำนวนใด",
+	"pictures": " ",
+	"answer1": "170",
+	"answer2": "171",
+	"answer3": "172",
+	"answer4": "173",
+	"Correct": "171"
+},
+{
+	"Question": "1, 1, 2, 3, 5, 8, 13, x จำนวน x คือจำนวนใด",
+	"pictures": " ",
+	"answer1": "14",
+	"answer2": "15",
+	"answer3": "18",
+	"answer4": "21",
+	"Correct": "21"
+}
+
+]

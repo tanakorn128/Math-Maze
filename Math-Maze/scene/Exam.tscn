@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scene/background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=2]
+[ext_resource path="res://assets/health_bar/VIDA_0 - Cขpia.png" type="Texture" id=3]
+[ext_resource path="res://assets/health_bar/VIDA_10.png" type="Texture" id=4]
+[ext_resource path="res://Font/Kanit-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://script/Exam.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 5 )
+
+[node name="Exam" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1029.0
+margin_bottom = 606.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" parent="Control" instance=ExtResource( 1 )]
+position = Vector2( 0, -3.1748 )
+
+[node name="Tabs" type="Tabs" parent="Control"]
+margin_right = 1029.0
+margin_bottom = 605.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="ColorRect" parent="Control/Tabs"]
+margin_left = 28.0
+margin_top = 118.0
+margin_right = 996.0
+margin_bottom = 368.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Tabs/question"]
+margin_left = 52.0
+margin_top = 36.0
+margin_right = 932.0
+margin_bottom = 223.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non felis nec lectus venenatis vehicula a vestibulum sem. Suspendisse malesuada hendrerit nisl, id interdum odio pellentesque vitae. Quisque fermentum pellentesque pulvinar."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer1" type="Button" parent="Control/Tabs"]
+margin_left = 22.0
+margin_top = 427.0
+margin_right = 491.0
+margin_bottom = 507.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Tabs/answer1"]
+margin_left = -4.0
+margin_top = 21.0
+margin_right = 456.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet"
+align = 1
+autowrap = true
+
+[node name="answer2" type="Button" parent="Control/Tabs"]
+margin_left = 527.0
+margin_top = 427.0
+margin_right = 996.0
+margin_bottom = 507.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Tabs/answer2"]
+margin_left = 7.0
+margin_top = 21.0
+margin_right = 467.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer3" type="Button" parent="Control/Tabs"]
+margin_left = 22.0
+margin_top = 515.0
+margin_right = 491.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Tabs/answer3"]
+margin_left = -7.0
+margin_top = 21.0
+margin_right = 453.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer4" type="Button" parent="Control/Tabs"]
+margin_left = 527.0
+margin_top = 515.0
+margin_right = 996.0
+margin_bottom = 595.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Tabs/answer4"]
+margin_left = 9.0
+margin_top = 21.0
+margin_right = 469.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Control"]
+margin_left = -6.0
+margin_right = 1015.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.75, 0.7 )
+max_value = 60.0
+value = 60.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Control"]
+autostart = true
+[connection signal="button_down" from="Control/Tabs/answer1" to="." method="_on_answer1_button_down"]
+[connection signal="button_down" from="Control/Tabs/answer2" to="." method="_on_answer2_button_down"]
+[connection signal="button_down" from="Control/Tabs/answer3" to="." method="_on_answer3_button_down"]
+[connection signal="button_down" from="Control/Tabs/answer4" to="." method="_on_answer4_button_down"]
+[connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]
