@@ -19,11 +19,24 @@ config/name="Math-Maze"
 run/main_scene="res://scene/world.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://script/global.gd"
+
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
-[rendering]
+[input]
 
-environment/default_environment="res://default_env.tres"
+ui_spacebar={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_shift={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}

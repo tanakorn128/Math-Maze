@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://script/enemy1.gd" type="Script" id=2]
 [ext_resource path="res://script/KinematicBody2D_enemy1.gd" type="Script" id=3]
 [ext_resource path="res://script/Navigation2Denemy1.gd" type="Script" id=4]
+[ext_resource path="res://scene/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/All Assets/Character/D4.png" type="Texture" id=7]
+[ext_resource path="res://assets/All Assets/Character/C1.png" type="Texture" id=8]
+[ext_resource path="res://script/battle.gd" type="Script" id=9]
+[ext_resource path="res://script/enemy1_bullet1.gd" type="Script" id=10]
+[ext_resource path="res://script/bullet2.gd" type="Script" id=11]
+[ext_resource path="res://script/save_game.gd" type="Script" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -18,9 +26,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 210.58, 126.828 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 114.776, 114.748 )
+
 [node name="enemy1" type="Node2D"]
 position = Vector2( 0.00508404, -0.0575438 )
 script = ExtResource( 2 )
+save_game = ExtResource( 12 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 script = ExtResource( 4 )
@@ -30,9 +45,6 @@ __meta__ = {
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Navigation2D"]
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/KinematicBody2D"]
 frames = SubResource( 2 )
@@ -41,5 +53,57 @@ animation = "idle"
 [node name="RayCast2D" type="RayCast2D" parent="Navigation2D/KinematicBody2D"]
 position = Vector2( -28.082, -28.959 )
 rotation = -0.785398
-scale = Vector2( 1.35, 1.35 )
+scale = Vector2( 7, 1.35 )
 enabled = true
+
+[node name="HUD" parent="Navigation2D/KinematicBody2D" instance=ExtResource( 5 )]
+position = Vector2( -37.4577, -55.4374 )
+scale = Vector2( 0.4, 0.5 )
+
+[node name="battle" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="BackGround" parent="battle" instance=ExtResource( 6 )]
+visible = false
+
+[node name="HUD1" parent="battle/BackGround" instance=ExtResource( 5 )]
+position = Vector2( 35, 30 )
+
+[node name="HUD2" parent="battle/BackGround" instance=ExtResource( 5 )]
+position = Vector2( 786, 30 )
+
+[node name="bullet1" type="Node2D" parent="battle/BackGround"]
+script = ExtResource( 10 )
+
+[node name="bullet2" type="Node2D" parent="battle/BackGround"]
+script = ExtResource( 11 )
+
+[node name="player" type="Sprite" parent="battle/BackGround"]
+position = Vector2( 154.841, 336.31 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="enemy" type="Sprite" parent="battle/BackGround"]
+position = Vector2( 835.61, 336.38 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="battle/BackGround"]
+position = Vector2( 835.61, 336.38 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battle/BackGround/Area2D"]
+position = Vector2( 3.18408, 10.4694 )
+shape = SubResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="battle/BackGround"]
+position = Vector2( 0.00508404, -0.0575438 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battle/BackGround/Area2D2"]
+position = Vector2( 161.444, 347.88 )
+scale = Vector2( 0.7, 0.7 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

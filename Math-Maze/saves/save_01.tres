@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-player_pos = Vector2( 953.33, -97.5 )
+player_pos = Vector2( -175, -3.8147e-06 )
+speed_player = 0
+speed_players = 15000

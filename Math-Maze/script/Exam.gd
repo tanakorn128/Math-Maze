@@ -9,6 +9,8 @@ var data = {
 	"correct": "answer1"
 }
 var rng = RandomNumberGenerator.new()
+signal my_exam_hit
+signal my_exam_lost
 func _ready():
 	updatedata()
 	
@@ -31,6 +33,15 @@ func updatedata():
 	$Control/Tabs/answer4/Label.text = data["answer4"]
 	pass
 
+func signal_enemy(signal_enemy):
+	if signal_enemy == "hit": #hit
+		updatedata()
+		$Control/TextureProgress.value = 60
+	if signal_enemy == "lost": #lost
+		updatedata()
+		$Control/TextureProgress.value = 60
+	pass
+
 func loaddata():
 	var f = File.new()
 	f.open("res://assets/exam/chapter1.json",File.READ)
@@ -50,8 +61,12 @@ func random():
 
 func check(answer,Correct):
 	if answer == Correct:
+		emit_signal("my_exam_hit")
+		print("my_exam_hit")
+		#queue_free()
 		return "Hit"
 	else:
+		emit_signal("my_exam_lost")
 		return "lose"
 
 func _on_Timer_timeout():
@@ -65,24 +80,20 @@ func _on_Timer_timeout():
 
 
 func _on_answer1_button_down():
-	var x = check(data.answer1,data.correct)
-	print(x)
+	check(data.answer1,data.correct)
 	pass # Replace with function body.
 
 
 func _on_answer2_button_down():
-	var x = check(data.answer2,data.correct)
-	print(x)
+	check(data.answer2,data.correct)
 	pass # Replace with function body.
 
 
 func _on_answer3_button_down():
-	var x = check(data.answer3,data.correct)
-	print(x)
+	check(data.answer3,data.correct)
 	pass # Replace with function body.
 
 
 func _on_answer4_button_down():
-	var x = check(data.answer4,data.correct)
-	print(x)
+	check(data.answer4,data.correct)
 	pass # Replace with function body.
