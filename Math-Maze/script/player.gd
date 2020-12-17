@@ -42,6 +42,7 @@ func _physics_process(delta):
 		velocity.y=0
 		velocity.x=0
 		$AnimatedSprite.play("idle")
+		if Input.is_action_just_pressed("ui_spacebar"): shoot("down") 
 	move_and_slide(velocity*delta)
 	pass
 func save():

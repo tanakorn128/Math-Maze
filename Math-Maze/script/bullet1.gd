@@ -46,14 +46,16 @@ func shoot_right():
 	if $Area2D.position.x > shoot_area:
 		queue_free()
 	$Area2D.position.x += 7
+	$Area2D/Sprite.rotation = 89.5
 	pass
 
 func shoot_left():
-	print(-shoot_area)
-	print($Area2D.position.x)
+	#print(-shoot_area)
+	#print($Area2D.position.x)
 	if $Area2D.position.x < -shoot_area:
 		queue_free()
 		pass
+	$Area2D/Sprite.rotation = -89.5
 	$Area2D.position.x -= 7
 	pass
 
@@ -68,5 +70,9 @@ func shoot_up():
 func shoot_down():
 	if $Area2D.position.y > shoot_area:
 		queue_free()
+	$Area2D/Sprite.rotation = 160
 	$Area2D.position.y += 7
 	pass
+
+
+

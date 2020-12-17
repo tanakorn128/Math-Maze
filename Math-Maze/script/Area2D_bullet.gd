@@ -17,6 +17,7 @@ func shoot_Start(value):
 		pass
 	pass
 func shoot():
+	$Sprite.rotation = 90
 	position.y -= positionY * delta2
 	velocity.y += gravity * delta2
 	position += velocity * delta2

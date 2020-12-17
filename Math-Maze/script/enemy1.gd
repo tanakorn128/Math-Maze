@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if child_num == 1: #ตรวจการชนสตรู
-		if $Navigation2D/KinematicBody2D/RayCast2D.is_colliding():
+		if $Navigation2D/KinematicBody2D/RayCast2D.is_colliding() or $Navigation2D/KinematicBody2D/RayCast2D2.is_colliding():
 			inst_exam()
 			child_num+=1
 			global.player_colliding = true

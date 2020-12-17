@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/All Assets/Re_Assets/B1.png" type="Texture" id=1]
 [ext_resource path="res://assets/All Assets/Re_Assets/OB1.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/All Assets/Re_Assets/B0_6_0.png" type="Texture" id=12]
 [ext_resource path="res://assets/All Assets/Re_Assets/label1.png" type="Texture" id=13]
 [ext_resource path="res://scene/system2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://script/world.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "B1.png 0"
@@ -357,6 +358,7 @@ points = PoolVector2Array( 31, 1, 31, 19, 14, 19, 14, 1 )
 13/z_index = 0
 
 [node name="world" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="BlackGround" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -376,5 +378,7 @@ tile_data = PoolIntArray( -43449022, 1, 0, -43448991, 3, 0, -43448976, 3, 0, -43
 [node name="system2" parent="." instance=ExtResource( 14 )]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1000, 0 )
+visible = false
+position = Vector2( -707.26, -303.009 )
+scale = Vector2( 3.54454, 3.29426 )
 texture = ExtResource( 3 )

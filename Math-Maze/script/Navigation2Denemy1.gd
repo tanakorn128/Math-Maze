@@ -15,6 +15,7 @@ func _process(delta):
 	EnemyToPlayer = EnemyToPlayer()
 	if EnemyToPlayer < MaxDistance:
 		move_enemy()
+		pass
 
 
 func EnemyToPlayer():

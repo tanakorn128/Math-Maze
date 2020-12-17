@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://script/bullet1.gd" type="Script" id=1]
 [ext_resource path="res://script/Area2D_bullet.gd" type="Script" id=2]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/O2.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.5115, 22.5984 )
+extents = Vector2( 24.085, 22.5984 )
 
 [node name="bullet1" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,14 +15,20 @@ gravity = 750.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Area2D"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 16.4954, 19.3259 )
+scale = Vector2( 0.0518079, 0.0295951 )
+texture = ExtResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 20.799, 20.2132 )
+position = Vector2( 15.9168, 19.7407 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -39,4 +46,5 @@ position = Vector2( 0, -600 )
 [node name="down" type="Sprite" parent="."]
 position = Vector2( 0, 600 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
