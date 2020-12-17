@@ -12,6 +12,7 @@ func _ready():
 	$battle/BackGround/bullet2.connect("attack_enemy",self,"attack_enemy2") #สัญญาณศตรูยิงผู้เล่น
 	insts.connect("my_exam_hit",self,"exam_hit") #สัญญาณตอบถูก
 	insts.connect("my_exam_lost",self,"exam_lost") #สัญญาณตอบผิด
+	global = get_node("/root/Global")
 	pass
 
 func _process(delta):
@@ -19,7 +20,6 @@ func _process(delta):
 		if $Navigation2D/KinematicBody2D/RayCast2D.is_colliding():
 			inst_exam()
 			child_num+=1
-			global = get_node("/root/Global")
 			global.player_colliding = true
 			global.speed_player = 0
 
@@ -52,27 +52,27 @@ func attack_enemy2(): #โดนโจมตีเสียผู้เล่น
 
 
 func inst_exam(): #opject ข้อสอบ
-	var save_game = load("res://saves/save_01.tres")
-	insts.position.x = save_game.player_pos.x-510
-	insts.position.y = save_game.player_pos.y-300
+	#var save_game = load("res://saves/save_01.tres")
+	insts.position.x = global.player_pos.x-510
+	insts.position.y = global.player_pos.y-300
 	add_child(insts)
 	print("create object exam position :",insts.position)
 
 func battle_hit(): #ตอบถูกต่อสู้
-	var save_game = load("res://saves/save_01.tres")
+	#var save_game = load("res://saves/save_01.tres")
 	insts.signal_enemy("hit") #สุ่มข้อสอบใหม
-	$battle/BackGround.position.x = save_game.player_pos.x-510
-	$battle/BackGround.position.y = save_game.player_pos.y-300
+	$battle/BackGround.position.x = global.player_pos.x-510
+	$battle/BackGround.position.y = global.player_pos.y-300
 	$battle/BackGround.show()
 	$battle/BackGround/bullet1.shoot()
 	pass
 
 func battle_lost(): #ตอยผิดต่อสู้
 	insts.hide()
-	var save_game = load("res://saves/save_01.tres")
+	#var save_game = load("res://saves/save_01.tres")
 	insts.signal_enemy("hit") #สุ่มข้อสอบใหม
-	$battle/BackGround.position.x = save_game.player_pos.x-510
-	$battle/BackGround.position.y = save_game.player_pos.y-300
+	$battle/BackGround.position.x = global.player_pos.x-510
+	$battle/BackGround.position.y = global.player_pos.y-300
 	$battle/BackGround.show()
 	shoot_bullet2()
 	$Timer.start()

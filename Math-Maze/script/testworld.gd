@@ -8,8 +8,10 @@ func _ready():
 		var x = rand.randf_range(0,screen_size.x)
 		var y = rand.randi_range(0,screen_size.y)
 		print(x,y)
-		inst_enemy(x,y)
+		#inst_enemy(x,y)
 	#inst_enemy(-410,-300)
+	enemy(1)
+	enemy(2)
 
 func inst_enemy(positionX,positionY):
 	var enemy = load("res://scene/enemy1.tscn")
@@ -19,3 +21,10 @@ func inst_enemy(positionX,positionY):
 	print("create inst_enemy")
 
 
+func enemy(pos):
+	if pos == 1:
+		inst_enemy(-1000,0)
+	if pos == 2:
+		inst_enemy(1000,0)
+	
+	pass

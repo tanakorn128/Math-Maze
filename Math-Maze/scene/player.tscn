@@ -8,32 +8,32 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
@@ -74,28 +74,28 @@ region = Rect2( 64, 64, 32, 32 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "left",
-"speed": 6.0
+"name": "right",
+"speed": 15.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "right",
-"speed": 6.0
+"name": "left",
+"speed": 15.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "up",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "idle",
-"speed": 6.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "down",
-"speed": 6.0
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=15]
@@ -121,7 +121,7 @@ shape = SubResource( 15 )
 current = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.001
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]

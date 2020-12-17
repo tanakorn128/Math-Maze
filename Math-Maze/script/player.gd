@@ -13,6 +13,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	save()
 	if global.player_colliding:
 		speed = global.speed_player
 		$HUD/TextureProgress.value = int(global.hp)
@@ -44,14 +45,16 @@ func _physics_process(delta):
 	move_and_slide(velocity*delta)
 	pass
 func save():
-	var new_save = save_game_class.new()
-	new_save.player_pos = position
-	ResourceSaver.save("res://saves/save_01.tres", new_save)
+	#var new_save = save_game_class.new()
+	#new_save.player_pos = position
+	#ResourceSaver.save("res://saves/save_01.tres", new_save)
+	var global = get_node("/root/Global")
+	global.player_pos = position
 	pass
 
 
 func _on_Timer_timeout():
-	save()
+	
 	pass # Replace with function body.
 
 func shoot(value):
@@ -59,3 +62,4 @@ func shoot(value):
 	inst.shoot_start(false)
 	add_child(inst)
 	inst.shoot2_start(value,true)
+
