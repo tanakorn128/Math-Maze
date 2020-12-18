@@ -1,0 +1,532 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Image/UI/Close.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H3.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/Settings/Settings.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Image/UI/Sound.png" type="Texture" id=5]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Image/UI/Music.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/Image/Splash/GodotEngineLogo.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Image/Splash/KMUTTSITLogo.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-3.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/Audio/Sfx/SoundTest.wav" type="AudioStream" id=12]
+
+[node name="Settings" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="."]
+self_modulate = Color( 1, 0.458824, 0.0941176, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = 96.0
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -312.0
+margin_top = 32.0
+margin_right = -124.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 3 )
+text = "ตั้งค่า"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -384.0
+margin_top = -220.0
+margin_right = 384.0
+margin_bottom = 268.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="เสียง" type="Tabs" parent="TabContainer"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง" instance=ExtResource( 6 )]
+palette_color = 9
+set_property = 2
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/เสียง"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 33.0
+margin_right = -64.0
+margin_bottom = -48.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundVBox" type="VBoxContainer" parent="TabContainer/เสียง/VBox"]
+margin_right = 640.0
+margin_bottom = 105.0
+
+[node name="TitleLabel" type="Label" parent="TabContainer/เสียง/VBox/SoundVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 640.0
+margin_bottom = 37.0
+text = "เสียงเอฟเฟกต์"
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/SoundVBox/TitleLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/เสียง/VBox/SoundVBox"]
+margin_top = 41.0
+margin_right = 640.0
+margin_bottom = 105.0
+custom_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_right = 48.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 0 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer/TextureRect" instance=ExtResource( 6 )]
+palette_color = 2
+set_property = 2
+
+[node name="SfxHSlider" type="HSlider" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_left = 80.0
+margin_right = 544.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+min_value = -60.0
+max_value = 0.0
+value = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer/SfxHSlider" instance=ExtResource( 6 )]
+palette_color = 2
+set_property = 2
+
+[node name="SfxPercentLabel" type="Label" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_left = 576.0
+margin_top = 13.0
+margin_right = 640.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 64, 0 )
+text = "100%"
+align = 2
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer/SfxPercentLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 2
+
+[node name="MusicVBox" type="VBoxContainer" parent="TabContainer/เสียง/VBox"]
+margin_top = 121.0
+margin_right = 640.0
+margin_bottom = 226.0
+
+[node name="TitleLabel" type="Label" parent="TabContainer/เสียง/VBox/MusicVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 640.0
+margin_bottom = 37.0
+text = "เสียงดนตรี"
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/MusicVBox/TitleLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/เสียง/VBox/MusicVBox"]
+margin_top = 41.0
+margin_right = 640.0
+margin_bottom = 105.0
+custom_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_right = 48.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 0 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer/TextureRect" instance=ExtResource( 6 )]
+palette_color = 2
+set_property = 2
+
+[node name="BgmHSlider" type="HSlider" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_left = 80.0
+margin_right = 544.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+min_value = -60.0
+max_value = 0.0
+value = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer/BgmHSlider" instance=ExtResource( 6 )]
+palette_color = 2
+set_property = 2
+
+[node name="BgmPercentLabel" type="Label" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_left = 576.0
+margin_top = 13.0
+margin_right = 640.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 64, 0 )
+text = "100%"
+align = 2
+
+[node name="ColorPaletteSetter" parent="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer/BgmPercentLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 2
+
+[node name="บัญชี" type="Tabs" parent="TabContainer"]
+visible = false
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+
+[node name="ColorPaletteSetter" parent="TabContainer/บัญชี" instance=ExtResource( 6 )]
+palette_color = 9
+set_property = 2
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/บัญชี"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 33.0
+margin_right = -64.0
+margin_bottom = -48.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameHBox" type="HBoxContainer" parent="TabContainer/บัญชี/VBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 640.0
+margin_bottom = 37.0
+
+[node name="ColorPaletteSetter" parent="TabContainer/บัญชี/VBox/UsernameHBox" instance=ExtResource( 6 )]
+palette_color = 5
+set_property = 1
+
+[node name="Label" type="Label" parent="TabContainer/บัญชี/VBox/UsernameHBox"]
+margin_right = 77.0
+margin_bottom = 37.0
+text = "ชื่อผู้ใช้: "
+
+[node name="Value" type="Label" parent="TabContainer/บัญชี/VBox/UsernameHBox"]
+margin_left = 81.0
+margin_right = 237.0
+margin_bottom = 37.0
+text = "my_username"
+
+[node name="UserExplain" type="Label" parent="TabContainer/บัญชี/VBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 53.0
+margin_right = 640.0
+margin_bottom = 106.0
+custom_fonts/font = ExtResource( 11 )
+text = "บัญชีผู้ใช้งานจะจัดเก็บคะแนนและสถิติเกมของผู้เล่นบนเซิร์ฟเวอร์ สามารถออกจากระบบและกลับเข้าสู่ระบบได้ทุกเมื่อ"
+autowrap = true
+
+[node name="ColorPaletteSetter" parent="TabContainer/บัญชี/VBox/UserExplain" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 1
+
+[node name="Logout" type="Label" parent="TabContainer/บัญชี/VBox"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_left = 253.0
+margin_top = 122.0
+margin_right = 386.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 4
+text = "ออกจากระบบ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/บัญชี/VBox/Logout" instance=ExtResource( 6 )]
+palette_color = 9
+set_property = 2
+
+[node name="Button" type="Button" parent="TabContainer/บัญชี/VBox/Logout"]
+self_modulate = Color( 1, 0, 0.223529, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_right = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter2" parent="TabContainer/บัญชี/VBox/Logout/Button" instance=ExtResource( 6 )]
+palette_color = 12
+set_property = 2
+
+[node name="เกี่ยวกับ" type="Tabs" parent="TabContainer"]
+visible = false
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ" instance=ExtResource( 6 )]
+palette_color = 9
+set_property = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/เกี่ยวกับ"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 33.0
+margin_right = -64.0
+margin_bottom = -32.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/เกี่ยวกับ/ScrollContainer"]
+margin_right = 640.0
+margin_bottom = 1032.0
+size_flags_horizontal = 3
+
+[node name="AboutTitle" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 632.0
+margin_bottom = 37.0
+text = "Mathgical Rush"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/AboutTitle" instance=ExtResource( 6 )]
+palette_color = 5
+set_property = 1
+
+[node name="AboutLabel" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 41.0
+margin_right = 632.0
+margin_bottom = 335.0
+custom_fonts/font = ExtResource( 8 )
+text = "คณิตพิชิตเวลา เป็นแอปพลิเคชันเกมแบบ 2D บนแพลตฟอร์มแบบ Android และ iOS มีเนื้อหาเกี่ยวกับวิชาคณิตศาสตร์ของชั้นประถมศึกษาปีที่ 5 ครอบคลุมช่วงชั้นประถมศึกษาปีที่ 4-6  โดยมีลักษณะเป็น Minigame มีการกำหนดเวลา เป็นคำถามที่นำแนวคิดมาจากบทเรียน  มีการเก็บสถิติคะแนน ของผู้เล่น เพื่อให้ผู้เล่นได้มีพัฒนาการด้านการคำนวณ และคณิตศาสตร์ที่ดีขึ้น มีจินตนาการมากขึ้น รวมถึงมีไหวพริบปฎิพาน มีสมาธิและมีการตอบสนองที่ดีขึ้น รวมถึงมีพื้นฐานความรู้เก่า และเตรียมตัวปรับฐานความรู้ใหม่ นอกจากนี้ยัง สามารถใช้ทำกิจกรรมร่วมกันในห้องได้เพื่อสร้างบรรยากาศที่ดีก่อนเริ่มเรียน วิชาคณิตศาสตร์"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/AboutLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 1
+
+[node name="EmptyBox" type="ReferenceRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 339.0
+margin_right = 632.0
+margin_bottom = 371.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 1
+
+[node name="KMUTT" type="TextureRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 375.0
+margin_right = 632.0
+margin_bottom = 476.0
+rect_min_size = Vector2( 0, 101 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="CompanyInfo" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 480.0
+margin_right = 632.0
+margin_bottom = 533.0
+custom_fonts/font = ExtResource( 11 )
+text = "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+คณะเทคโนโลยีสารสนเทศ"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/CompanyInfo" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 1
+
+[node name="EmptyBox2" type="ReferenceRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 537.0
+margin_right = 632.0
+margin_bottom = 569.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 1
+
+[node name="EngineTexture" type="TextureRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 573.0
+margin_right = 632.0
+margin_bottom = 701.0
+rect_min_size = Vector2( 0, 128 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="MadeWith" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 705.0
+margin_right = 632.0
+margin_bottom = 758.0
+custom_fonts/font = ExtResource( 11 )
+text = "แอปพลิเคชันเกมจัดทำด้วยเกมเอ็นจิ้น Godot
+ภายใต้ลิขสิทธิ์ MIT License"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/MadeWith" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 1
+
+[node name="EmptyBox3" type="ReferenceRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 762.0
+margin_right = 632.0
+margin_bottom = 794.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 1
+
+[node name="Copyright" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 798.0
+margin_right = 632.0
+margin_bottom = 823.0
+custom_fonts/font = ExtResource( 11 )
+text = "Copyright© 2020 Heart Code Team"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/Copyright" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 1
+
+[node name="EmptyBox4" type="ReferenceRect" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+margin_top = 827.0
+margin_right = 632.0
+margin_bottom = 859.0
+rect_min_size = Vector2( 0, 32 )
+mouse_filter = 1
+
+[node name="CreditTitle" type="Label" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_top = 863.0
+margin_right = 632.0
+margin_bottom = 900.0
+text = "เครดิตทรัพยากรเกม"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/CreditTitle" instance=ExtResource( 6 )]
+palette_color = 5
+set_property = 1
+
+[node name="CreditLabel" type="RichTextLabel" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 904.0
+margin_right = 632.0
+margin_bottom = 1032.0
+rect_min_size = Vector2( 0, 128 )
+mouse_filter = 1
+custom_fonts/normal_font = ExtResource( 11 )
+bbcode_enabled = true
+bbcode_text = "KanitFont - จัดทำโดย [url=https://font.cadsondemak.com/foundry]Cadson Demak[/url]
+ดนตรีประกอบ - [url=https://www.zapsplat.com/]Zapsplat[/url]
+ไอคอนและรูปภาพประกอบบางส่วน ถูกนำมาใช้จากเจ้าของลิขสิทธิ์ [url=https://www.flaticon.com/authors/freepik]Freepik[/url] ณ เว็บไซต์ [url=https://www.flaticon.com]flaticon.com[/url]"
+text = "KanitFont - จัดทำโดย Cadson Demak
+ดนตรีประกอบ - Zapsplat
+ไอคอนและรูปภาพประกอบบางส่วน ถูกนำมาใช้จากเจ้าของลิขสิทธิ์ Freepik ณ เว็บไซต์ flaticon.com"
+
+[node name="ColorPaletteSetter" parent="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/CreditLabel" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 1
+
+[node name="VersionLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -248.0
+margin_top = -48.0
+margin_right = -64.0
+text = "version_number"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundTest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "Sfx"
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="value_changed" from="TabContainer/เสียง/VBox/SoundVBox/HBoxContainer/SfxHSlider" to="." method="_on_SfxHSlider_value_changed"]
+[connection signal="value_changed" from="TabContainer/เสียง/VBox/MusicVBox/HBoxContainer/BgmHSlider" to="." method="_on_BgmHSlider_value_changed"]
+[connection signal="meta_clicked" from="TabContainer/เกี่ยวกับ/ScrollContainer/VBoxContainer/CreditLabel" to="." method="_on_CreditLabel_meta_clicked"]

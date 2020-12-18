@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://src/MainMenu/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/MainMenu/Audio.gd" type="Script" id=3]
+[ext_resource path="res://src/MainMenu/background.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = SubResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BackGround" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2.66968, 2.66968 )
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_right = 40.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volum" type="Button" parent="Tabs"]
+margin_left = 142.185
+margin_top = 426.623
+margin_right = 549.185
+margin_bottom = 532.623
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.466667, 0.713726, 1 )
+text = "Sound Volum"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volum2" type="Button" parent="Tabs"]
+margin_left = 484.717
+margin_top = 44.4939
+margin_right = 891.717
+margin_bottom = 150.494
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enable Sound" type="Button" parent="Tabs"]
+margin_left = 144.954
+margin_top = 249.668
+margin_right = 556.954
+margin_bottom = 355.668
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.466667, 0.713726, 1 )
+text = "Enable Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 12.1483
+margin_top = 387.206
+margin_right = 1404.15
+margin_bottom = 398.206
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 6.80896
+margin_top = 553.387
+margin_right = 1398.81
+margin_bottom = 564.387
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[connection signal="pressed" from="Tabs/Volum" to="." method="_on_Volum_pressed"]
+[connection signal="pressed" from="Tabs/Enable Sound" to="." method="_on_Enable_Sound_pressed"]
+[connection signal="toggled" from="Tabs/Enable Sound" to="." method="_on_Enable_Sound_toggled"]

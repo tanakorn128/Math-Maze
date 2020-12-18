@@ -1,0 +1,223 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/Exam/Control.gd" type="Script" id=1]
+[ext_resource path="res://Font/THSarabunNew.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Exam/exam.gd" type="Script" id=3]
+[ext_resource path="res://src/Exam/OptionButton.gd" type="Script" id=4]
+[ext_resource path="res://src/Exam/remove.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+font_data = SubResource( 10 )
+
+[node name="Exam" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+margin_left = -712.577
+margin_top = 68.8138
+margin_right = -244.579
+margin_bottom = 534.814
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+margin_left = -1491.51
+margin_top = 110.757
+margin_right = -1076.51
+margin_bottom = 386.757
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="create_json" type="Button" parent="Control"]
+margin_left = 24.0
+margin_top = 576.0
+margin_right = 144.0
+margin_bottom = 620.0
+text = "create_json"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load_json" type="Button" parent="Control"]
+margin_left = 792.0
+margin_top = 640.0
+margin_right = 910.0
+margin_bottom = 683.0
+text = "load_json"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="update_dictionary" type="Button" parent="Control"]
+margin_left = 24.0
+margin_top = 648.0
+margin_right = 149.0
+margin_bottom = 688.0
+text = "update_dictionaty"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="merge_dictionary" type="Button" parent="Control"]
+margin_left = 592.0
+margin_top = 640.0
+margin_right = 714.0
+margin_bottom = 680.0
+text = "Add"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="TextEdit" parent="Control"]
+margin_left = 352.0
+margin_top = 40.0
+margin_right = 1120.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer1" type="TextEdit" parent="Control"]
+margin_left = 352.0
+margin_top = 176.0
+margin_right = 1120.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer2" type="TextEdit" parent="Control"]
+margin_left = 352.0
+margin_top = 296.0
+margin_right = 1120.0
+margin_bottom = 360.0
+custom_fonts/font = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer3" type="TextEdit" parent="Control"]
+margin_left = 352.0
+margin_top = 424.0
+margin_right = 1120.0
+margin_bottom = 488.0
+custom_fonts/font = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer4" type="TextEdit" parent="Control"]
+margin_left = 352.0
+margin_top = 552.0
+margin_right = 1120.0
+margin_bottom = 616.0
+custom_fonts/font = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="Control"]
+margin_left = 96.0
+margin_top = 104.0
+margin_right = 224.0
+margin_bottom = 145.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/OptionButton"]
+margin_left = 40.0
+margin_top = -24.0
+margin_right = 80.0
+margin_bottom = -10.0
+text = "chater"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remove" type="Button" parent="Control"]
+margin_left = 976.0
+margin_top = 640.0
+margin_right = 1096.0
+margin_bottom = 680.0
+text = "remove"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exam" type="OptionButton" parent="Control"]
+margin_left = 96.0
+margin_top = 192.0
+margin_right = 224.0
+margin_bottom = 231.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exam" type="Label" parent="Control/exam"]
+margin_left = 40.0
+margin_top = -24.0
+margin_right = 110.0
+margin_bottom = -7.0
+text = "Exam"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/create_json" to="Control" method="_on_create_json_pressed"]
+[connection signal="pressed" from="Control/load_json" to="Control" method="_on_load_json_pressed"]
+[connection signal="pressed" from="Control/update_dictionary" to="Control" method="_on_update_dictionary_pressed"]
+[connection signal="pressed" from="Control/merge_dictionary" to="Control" method="_on_merge_dictionary_pressed"]
+[connection signal="pressed" from="Control/OptionButton" to="Control/OptionButton" method="_on_OptionButton_pressed"]
+[connection signal="pressed" from="Control/remove" to="Control/remove" method="_on_remove_pressed"]
+[connection signal="pressed" from="Control/exam" to="Control/exam" method="_on_exam_pressed"]
+[connection signal="pressed" from="Control/exam" to="Control" method="_on_exam_pressed"]

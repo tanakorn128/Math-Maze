@@ -1,0 +1,570 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H1.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Image/UI/Crown.png" type="Texture" id=4]
+[ext_resource path="res://Src/Class/CustomNode/FloatingParticles.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Image/UI/Trophy.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Image/UI/Sad.png" type="Texture" id=7]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/LeaderboardContainer/LeaderboardContainer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=9]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/StatisticsTabContainer.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="StatisticsTabContainer" type="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 9 )
+tab_align = 0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ภาพรวม" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+rect_clip_content = true
+
+[node name="Centre" type="Control" parent="ภาพรวม"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FloatingParticles" parent="ภาพรวม/Centre" instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 0.0784314 )
+position = Vector2( 0, 4.5 )
+amount = 16
+texture = ExtResource( 6 )
+scale_amount = 0.3
+
+[node name="MarginContainer" type="MarginContainer" parent="ภาพรวม"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_top = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ภาพรวม/MarginContainer"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 521.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalScoreVBox" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox"]
+margin_top = 27.0
+margin_right = 960.0
+margin_bottom = 124.0
+size_flags_vertical = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/TotalScoreVBox"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_right = 960.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 3 )
+text = "12,345"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="ภาพรวม/MarginContainer/Control/VBox/TotalScoreVBox/Value" instance=ExtResource( 1 )]
+palette_color = 2
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/TotalScoreVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 67.0
+margin_right = 960.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 2 )
+text = "คะแนนสะสม"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/TotalScoreVBox/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="LargeDataHBox" type="HBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox"]
+margin_top = 156.0
+margin_right = 960.0
+margin_bottom = 253.0
+size_flags_vertical = 2
+
+[node name="WinLoseVBox" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox"]
+margin_right = 478.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/WinLoseVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_left = 139.0
+margin_right = 338.0
+margin_bottom = 63.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "123-123"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/WinLoseVBox/Value" instance=ExtResource( 1 )]
+palette_color = 6
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/WinLoseVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 67.0
+margin_right = 478.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 2 )
+text = "ชนะ-แพ้"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/WinLoseVBox/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="HighScoreVBox" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox"]
+margin_left = 482.0
+margin_right = 960.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValueLabelHBox" type="HBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox"]
+modulate = Color( 1, 0.458824, 0.0941176, 1 )
+margin_right = 478.0
+margin_bottom = 63.0
+alignment = 1
+
+[node name="ColorPaletteSetter" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox/ValueLabelHBox" instance=ExtResource( 1 )]
+palette_color = 11
+set_property = 1
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox/ValueLabelHBox"]
+margin_left = 157.0
+margin_right = 321.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 3 )
+text = "12,345"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrownTextureRect" type="TextureRect" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox/ValueLabelHBox/Value"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -16.0
+margin_top = -28.0
+margin_right = 16.0
+margin_bottom = 4.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 67.0
+margin_right = 478.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 2 )
+text = "คะแนนสูงสุด"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/LargeDataHBox/HighScoreVBox/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="SmallInfoHBox" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox"]
+margin_top = 312.0
+margin_right = 960.0
+margin_bottom = 488.0
+size_flags_vertical = 3
+custom_constants/separation = 16
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox"]
+margin_right = 960.0
+margin_bottom = 80.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="TimePlayedPanel" type="Panel" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox"]
+margin_left = 248.0
+margin_right = 472.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 224, 80 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/TimePlayedPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/TimePlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 4.0
+margin_right = 224.0
+margin_bottom = 41.0
+text = "23 ชั่วโมง 59 นาที"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterPrimary" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/TimePlayedPanel/VBoxContainer/Value" instance=ExtResource( 1 )]
+palette_color = 6
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/TimePlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 45.0
+margin_right = 224.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 2 )
+text = "เวลาที่เล่นไป"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/TimePlayedPanel/VBoxContainer/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="GamesPlayedPanel" type="Panel" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox"]
+margin_left = 488.0
+margin_right = 712.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 224, 80 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/GamesPlayedPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/GamesPlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 4.0
+margin_right = 224.0
+margin_bottom = 41.0
+text = "123"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterPrimary" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/GamesPlayedPanel/VBoxContainer/Value" instance=ExtResource( 1 )]
+palette_color = 6
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/GamesPlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 45.0
+margin_right = 224.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 2 )
+text = "จำนวนเกมที่เล่น"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox/GamesPlayedPanel/VBoxContainer/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="HBox2" type="HBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox"]
+margin_top = 96.0
+margin_right = 960.0
+margin_bottom = 176.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="PuzzlesPlayedPanel" type="Panel" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2"]
+margin_left = 248.0
+margin_right = 472.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 224, 80 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/PuzzlesPlayedPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/PuzzlesPlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 4.0
+margin_right = 224.0
+margin_bottom = 41.0
+text = "1,234"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterPrimary" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/PuzzlesPlayedPanel/VBoxContainer/Value" instance=ExtResource( 1 )]
+palette_color = 6
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/PuzzlesPlayedPanel/VBoxContainer"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 45.0
+margin_right = 224.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 2 )
+text = "จำนวนปริศนาที่เล่น"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/PuzzlesPlayedPanel/VBoxContainer/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="AvgPanel" type="Panel" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2"]
+margin_left = 488.0
+margin_right = 712.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 224, 80 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/AvgPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/AvgPanel/VBoxContainer"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 4.0
+margin_right = 224.0
+margin_bottom = 41.0
+text = "1,234"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterPrimary" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/AvgPanel/VBoxContainer/Value" instance=ExtResource( 1 )]
+palette_color = 6
+set_property = 2
+
+[node name="Label" type="Label" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/AvgPanel/VBoxContainer"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 45.0
+margin_right = 224.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 2 )
+text = "คะแนนเฉลี่ยต่อเกม"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetterNoFocus" parent="ภาพรวม/MarginContainer/Control/VBox/SmallInfoHBox/HBox2/AvgPanel/VBoxContainer/Label" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 2
+
+[node name="คะแนนของฉัน" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+
+[node name="MarginContainer" type="MarginContainer" parent="คะแนนของฉัน"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_top = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="คะแนนของฉัน/MarginContainer"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 521.0
+
+[node name="StatsScoreTabsContainer" type="TabContainer" parent="คะแนนของฉัน/MarginContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -47.0
+rect_min_size = Vector2( 112, 0 )
+size_flags_horizontal = 0
+custom_styles/panel = SubResource( 1 )
+tabs_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="กระดานคะแนน" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 47.0
+
+[node name="StateContainer" type="TabContainer" parent="กระดานคะแนน"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+tabs_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connecting" type="Tabs" parent="กระดานคะแนน/StateContainer"]
+visible = false
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorPaletteSetter" parent="กระดานคะแนน/StateContainer/Connecting" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 1
+
+[node name="Label" type="Label" parent="กระดานคะแนน/StateContainer/Connecting"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -18.5
+margin_right = 20.0
+margin_bottom = 18.5
+grow_horizontal = 2
+text = "กำลังเชื่อมต่อกับฐานข้อมูล โปรดรอสักครู่..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoConnection" type="Tabs" parent="กระดานคะแนน/StateContainer"]
+visible = false
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorPaletteSetter" parent="กระดานคะแนน/StateContainer/NoConnection" instance=ExtResource( 1 )]
+palette_color = 7
+set_property = 1
+
+[node name="VBox" type="VBoxContainer" parent="กระดานคะแนน/StateContainer/NoConnection"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.0
+margin_top = -20.5
+margin_right = 208.0
+margin_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="กระดานคะแนน/StateContainer/NoConnection/VBox"]
+margin_right = 416.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="กระดานคะแนน/StateContainer/NoConnection/VBox"]
+margin_top = 132.0
+margin_right = 416.0
+margin_bottom = 209.0
+grow_horizontal = 2
+text = "ไม่พบการเชื่อมต่ออินเทอร์เน็ต
+ERR_INTERNET_DISCONNECTED"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loaded" type="Tabs" parent="กระดานคะแนน/StateContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeaderboardContainer" parent="กระดานคะแนน/StateContainer/Loaded" instance=ExtResource( 8 )]
+anchor_left = 0.0625
+anchor_right = 0.9375

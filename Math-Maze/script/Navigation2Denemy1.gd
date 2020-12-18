@@ -1,6 +1,6 @@
 extends Navigation2D
-const FOLLOW_SPEED = 0.4
-var MaxDistance = 650
+const FOLLOW_SPEED = 0.1
+var MaxDistance = 450
 var EnemyToPlayer
 var t
 var global

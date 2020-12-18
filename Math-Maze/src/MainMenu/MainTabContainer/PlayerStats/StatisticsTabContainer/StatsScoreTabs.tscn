@@ -1,0 +1,244 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-3.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=5]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/StatsScoreTabs.gd" type="Script" id=6]
+
+[node name="StatsScoreTabs" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoHBox" type="HBoxContainer" parent="VBox"]
+margin_right = 1024.0
+margin_bottom = 53.0
+
+[node name="DifficultyButton" type="Button" parent="VBox/InfoHBox"]
+self_modulate = Color( 0.247059, 0.713726, 0.0941176, 1 )
+margin_right = 128.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 128, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBox/InfoHBox/DifficultyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "text"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreInfoVBox" type="VBoxContainer" parent="VBox/InfoHBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_left = 132.0
+margin_right = 1024.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/InfoHBox/ScoreInfoVBox" instance=ExtResource( 3 )]
+palette_color = 7
+set_property = 1
+
+[node name="ScorePerPuzzleHBox" type="HBoxContainer" parent="VBox/InfoHBox/ScoreInfoVBox"]
+margin_right = 892.0
+margin_bottom = 25.0
+custom_constants/separation = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBox/InfoHBox/ScoreInfoVBox/ScorePerPuzzleHBox"]
+margin_left = 687.0
+margin_right = 852.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+text = "คะแนนเต็มต่อหนึ่งปริศนา:"
+
+[node name="Data" type="Label" parent="VBox/InfoHBox/ScoreInfoVBox/ScorePerPuzzleHBox"]
+margin_left = 852.0
+margin_right = 892.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 40, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "xxx"
+align = 2
+
+[node name="ScoreTimeBonusHBox" type="HBoxContainer" parent="VBox/InfoHBox/ScoreInfoVBox"]
+margin_top = 25.0
+margin_right = 892.0
+margin_bottom = 50.0
+custom_constants/separation = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBox/InfoHBox/ScoreInfoVBox/ScoreTimeBonusHBox"]
+margin_left = 740.0
+margin_right = 852.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+text = "คะแนนเวลาโบนัส:"
+
+[node name="Data" type="Label" parent="VBox/InfoHBox/ScoreInfoVBox/ScoreTimeBonusHBox"]
+margin_left = 852.0
+margin_right = 892.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 40, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "xx"
+align = 2
+
+[node name="EmptyBox" type="ReferenceRect" parent="VBox"]
+margin_top = 57.0
+margin_right = 1024.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
+margin_top = 77.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="ListHBox" type="HBoxContainer" parent="VBox/ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_constants/separation = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StageNameVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox"]
+margin_right = 605.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/ListHBox/StageNameVBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 605.0
+margin_bottom = 37.0
+text = "ชื่อด่าน"
+
+[node name="ColorPaletteSetter" parent="VBox/ScrollContainer/ListHBox/StageNameVBox/Label" instance=ExtResource( 3 )]
+palette_color = 5
+set_property = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBox/ScrollContainer/ListHBox/StageNameVBox/Label"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -4.0
+margin_right = 1224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox/StageNameVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 41.0
+margin_right = 605.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/ListHBox/StageNameVBox/DataVBox" instance=ExtResource( 3 )]
+palette_color = 6
+set_property = 1
+
+[node name="WinLoseVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox"]
+margin_left = 637.0
+margin_right = 715.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/ListHBox/WinLoseVBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 78.0
+margin_bottom = 37.0
+text = "ชนะ-แพ้"
+align = 2
+
+[node name="ColorPaletteSetter" parent="VBox/ScrollContainer/ListHBox/WinLoseVBox/Label" instance=ExtResource( 3 )]
+palette_color = 5
+set_property = 1
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox/WinLoseVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 41.0
+margin_right = 78.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/ListHBox/WinLoseVBox/DataVBox" instance=ExtResource( 3 )]
+palette_color = 6
+set_property = 1
+
+[node name="ScoreEarnedVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox"]
+margin_left = 747.0
+margin_right = 877.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/ListHBox/ScoreEarnedVBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 130.0
+margin_bottom = 37.0
+text = "คะแนนที่ได้รับ"
+align = 2
+
+[node name="ColorPaletteSetter" parent="VBox/ScrollContainer/ListHBox/ScoreEarnedVBox/Label" instance=ExtResource( 3 )]
+palette_color = 5
+set_property = 1
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox/ScoreEarnedVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 41.0
+margin_right = 130.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/ListHBox/ScoreEarnedVBox/DataVBox" instance=ExtResource( 3 )]
+palette_color = 6
+set_property = 1
+
+[node name="ScoreAvgVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox"]
+margin_left = 909.0
+margin_right = 1024.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/ListHBox/ScoreAvgVBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 115.0
+margin_bottom = 37.0
+text = "คะแนนเฉลี่ย"
+align = 2
+
+[node name="ColorPaletteSetter" parent="VBox/ScrollContainer/ListHBox/ScoreAvgVBox/Label" instance=ExtResource( 3 )]
+palette_color = 5
+set_property = 1
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/ListHBox/ScoreAvgVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 41.0
+margin_right = 115.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/ListHBox/ScoreAvgVBox/DataVBox" instance=ExtResource( 3 )]
+palette_color = 6
+set_property = 1
+[connection signal="pressed" from="VBox/InfoHBox/DifficultyButton" to="." method="_on_DifficultyButton_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://src/MainMenu/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/MainMenu/Display.gd" type="Script" id=3]
+[ext_resource path="res://src/MainMenu/background.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BackGround" parent="." instance=ExtResource( 4 )]
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_right = 40.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" parent="Tabs" instance=ExtResource( 2 )]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Chapter/Ch1/ch1-2/Ch1Scene3.gd" type="Script" id=2]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 150.607, 152.983 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 154.217, 129.854 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 134.927, 159.97 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 160.586, 166.225 )
+
+[node name="Scene3" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Tree1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1"]
+position = Vector2( 214.71, 363.487 )
+shape = SubResource( 1 )
+
+[node name="Tree2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2"]
+position = Vector2( -744.485, 3184.08 )
+shape = SubResource( 2 )
+
+[node name="Tree3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree3"]
+position = Vector2( 3033.95, 1251.25 )
+shape = SubResource( 3 )
+
+[node name="Tree4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree4"]
+position = Vector2( 1765.13, -1644.29 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Tree1" to="." method="_on_Tree1_body_entered"]
+[connection signal="body_entered" from="Tree2" to="." method="_on_Tree2_body_entered"]
+[connection signal="body_entered" from="Tree3" to="." method="_on_Tree3_body_entered"]
+[connection signal="body_entered" from="Tree4" to="." method="_on_Tree4_body_entered"]

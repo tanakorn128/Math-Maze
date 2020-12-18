@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-3.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/Practice/PracticeDetailPopup/BadgeData/BadgeData.gd" type="Script" id=2]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Image/UI/Timer.png" type="Texture" id=4]
+
+[node name="BadgeData" type="Control"]
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentBox" type="VBoxContainer" parent="."]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="ContentBox" instance=ExtResource( 3 )]
+palette_color = 7
+set_property = 1
+alpha = 1.0
+
+[node name="HBox" type="HBoxContainer" parent="ContentBox"]
+margin_right = 256.0
+margin_bottom = 48.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconTexture" type="TextureRect" parent="ContentBox/HBox"]
+margin_top = 8.0
+margin_right = 32.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="ContentBox/HBox"]
+margin_left = 36.0
+margin_top = 11.0
+margin_right = 256.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "icon-name-text"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

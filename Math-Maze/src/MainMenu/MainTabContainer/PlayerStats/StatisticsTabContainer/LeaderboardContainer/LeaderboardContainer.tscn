@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=1]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/LeaderboardContainer/LeaderboardContainer.gd" type="Script" id=3]
+
+[node name="LeaderboardContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+custom_constants/margin_right = 32
+custom_constants/margin_top = 16
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 16
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 992.0
+margin_bottom = 584.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
+margin_right = 960.0
+margin_bottom = 568.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="HBox" type="HBoxContainer" parent="VBox/ScrollContainer"]
+margin_right = 960.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_constants/separation = 32
+
+[node name="NoVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox"]
+margin_right = 17.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/HBox/NoVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 0.5 )
+margin_right = 17.0
+margin_bottom = 37.0
+text = "#"
+
+[node name="HSeparator" type="HSeparator" parent="VBox/ScrollContainer/HBox/NoVBox/Label"]
+modulate = Color( 1, 1, 1, 0.533333 )
+margin_top = 31.0
+margin_right = 816.0
+margin_bottom = 39.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/HBox/NoVBox/Label" instance=ExtResource( 2 )]
+palette_color = 6
+set_property = 1
+alpha = 0.5
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox/NoVBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 41.0
+margin_right = 17.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetterNoFocus" parent="VBox/ScrollContainer/HBox/NoVBox/DataVBox" instance=ExtResource( 2 )]
+palette_color = 7
+set_property = 1
+
+[node name="NameVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox"]
+margin_left = 49.0
+margin_right = 771.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/HBox/NameVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 722.0
+margin_bottom = 37.0
+text = "ชื่อ"
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/HBox/NameVBox/Label" instance=ExtResource( 2 )]
+palette_color = 6
+set_property = 1
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox/NameVBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 41.0
+margin_right = 722.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetterNoFocus" parent="VBox/ScrollContainer/HBox/NameVBox/DataVBox" instance=ExtResource( 2 )]
+palette_color = 7
+set_property = 1
+
+[node name="ScoreVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox"]
+margin_left = 803.0
+margin_right = 928.0
+margin_bottom = 41.0
+
+[node name="Label" type="Label" parent="VBox/ScrollContainer/HBox/ScoreVBox"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 125.0
+margin_bottom = 37.0
+text = "คะแนนสูงสุด"
+align = 2
+
+[node name="ColorPaletteSetter2ndry" parent="VBox/ScrollContainer/HBox/ScoreVBox/Label" instance=ExtResource( 2 )]
+palette_color = 6
+set_property = 1
+
+[node name="DataVBox" type="VBoxContainer" parent="VBox/ScrollContainer/HBox/ScoreVBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 41.0
+margin_right = 125.0
+margin_bottom = 41.0
+
+[node name="ColorPaletteSetterNoFocus" parent="VBox/ScrollContainer/HBox/ScoreVBox/DataVBox" instance=ExtResource( 2 )]
+palette_color = 7
+set_property = 1
+
+[node name="EmptyBox" type="ReferenceRect" parent="VBox/ScrollContainer/HBox"]
+margin_left = 960.0
+margin_right = 960.0
+margin_bottom = 41.0

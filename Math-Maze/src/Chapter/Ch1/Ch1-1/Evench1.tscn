@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/Scene3.gd" type="Script" id=1]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/lable.tscn" type="PackedScene" id=3]
+
+[node name="Evench1" type="Node2D"]
+
+[node name="Tree" parent="." instance=ExtResource( 2 )]
+
+[node name="lable" parent="." instance=ExtResource( 3 )]
+
+[node name="Scene3" type="Node2D" parent="."]
+script = ExtResource( 1 )

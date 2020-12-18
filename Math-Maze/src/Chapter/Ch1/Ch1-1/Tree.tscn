@@ -1,0 +1,151 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/Tree.gd" type="Script" id=1]
+[ext_resource path="res://src/DialogBox/Scene/DialogBoxV3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/CollisionTree1.gd" type="Script" id=3]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/script/Tree2.gd" type="Script" id=4]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/script/lablehome.gd" type="Script" id=5]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/script/Tree3.gd" type="Script" id=6]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/script/Tree4.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 151.239, 151.977 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 166.802, 156.286 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 134.368, 161.337 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 159.924, 150.727 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 55.1378, 49.5374 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 79.9969, 57.6941 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 62.1096, 60.2891 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 79.4204, 46.9087 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 342.61, 33.8379 )
+
+[node name="Tree" type="Node2D"]
+rotation = -2.25157
+script = ExtResource( 1 )
+
+[node name="Tree1" type="Area2D" parent="."]
+rotation = -0.227458
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1"]
+position = Vector2( -813.247, -176.044 )
+rotation = 0.906464
+shape = SubResource( 1 )
+script = ExtResource( 3 )
+
+[node name="DialogBoxV3" parent="Tree1/CollisionShape2D" instance=ExtResource( 2 )]
+position = Vector2( 639.999, -531.756 )
+rotation = -0.679006
+
+[node name="Tree2" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2"]
+position = Vector2( -2442.91, -2541.12 )
+rotation = 0.670361
+shape = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="DialogBoxV3" parent="Tree2/CollisionShape2D" instance=ExtResource( 2 )]
+
+[node name="Tree3" type="Area2D" parent="."]
+visible = false
+position = Vector2( -107.16, -74.647 )
+
+[node name="Tree3" type="CollisionShape2D" parent="Tree3"]
+position = Vector2( -251.657, 2467.78 )
+rotation = 0.687837
+shape = SubResource( 3 )
+script = ExtResource( 6 )
+
+[node name="DialogBoxV3" parent="Tree3/Tree3" instance=ExtResource( 2 )]
+
+[node name="Tree4" type="Area2D" parent="."]
+visible = false
+position = Vector2( -214.992, -162.575 )
+
+[node name="Tree4" type="CollisionShape2D" parent="Tree4"]
+position = Vector2( -3076.51, 1803.15 )
+rotation = 0.700706
+shape = SubResource( 4 )
+script = ExtResource( 7 )
+
+[node name="DialogBoxV3" parent="Tree4/Tree4" instance=ExtResource( 2 )]
+
+[node name="lablehome" type="Area2D" parent="."]
+visible = false
+position = Vector2( -19.9796, -11.3237 )
+
+[node name="lablehome" type="CollisionShape2D" parent="lablehome"]
+position = Vector2( -1595.23, 196.454 )
+rotation = 0.704283
+shape = SubResource( 5 )
+script = ExtResource( 5 )
+
+[node name="DialogBoxV3" parent="lablehome/lablehome" instance=ExtResource( 2 )]
+
+[node name="lable3" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable3"]
+position = Vector2( -983.893, 2241.09 )
+rotation = 0.666204
+shape = SubResource( 6 )
+
+[node name="DialogBoxV3" parent="lable3/CollisionShape2D" instance=ExtResource( 2 )]
+
+[node name="lable4" type="Area2D" parent="."]
+visible = false
+position = Vector2( -983.893, 2241.09 )
+rotation = 0.666204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable4"]
+position = Vector2( -1417.32, -26.6602 )
+shape = SubResource( 7 )
+
+[node name="DialogBoxV3" parent="lable4/CollisionShape2D" instance=ExtResource( 2 )]
+
+[node name="lable4-1" type="Area2D" parent="."]
+visible = false
+position = Vector2( -2081.68, 1344.22 )
+rotation = 0.666204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable4-1"]
+visible = false
+position = Vector2( -1469.42, 2501.14 )
+shape = SubResource( 8 )
+
+[node name="DialogBoxV3" parent="lable4-1/CollisionShape2D" instance=ExtResource( 2 )]
+
+[node name="End" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2( -4201.37, 5081.51 )
+rotation = 0.701104
+shape = SubResource( 9 )
+
+[node name="DialogBoxV3" parent="End/CollisionShape2D" instance=ExtResource( 2 )]
+[connection signal="body_entered" from="Tree1" to="Tree1/CollisionShape2D" method="_on_Tree1_body_entered"]
+[connection signal="body_entered" from="Tree2" to="Tree2/CollisionShape2D" method="_on_Tree2_body_entered"]
+[connection signal="body_entered" from="Tree3" to="Tree3/Tree3" method="_on_Tree3_body_entered"]
+[connection signal="body_entered" from="Tree4" to="Tree4/Tree4" method="_on_Tree4_body_entered"]
+[connection signal="body_entered" from="lablehome" to="lablehome/lablehome" method="_on_lablehome_body_entered"]
+[connection signal="body_entered" from="lable3" to="." method="_on_lable3_body_entered"]
+[connection signal="body_entered" from="lable4" to="." method="_on_lable4_body_entered"]
+[connection signal="body_entered" from="lable4-1" to="." method="_on_lable41_body_entered"]
+[connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]

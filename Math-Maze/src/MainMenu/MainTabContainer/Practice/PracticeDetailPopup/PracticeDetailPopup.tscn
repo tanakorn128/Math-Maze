@@ -1,0 +1,326 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/Panel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/Practice/PracticeDetailPopup/PracticeDetailPopup.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Image/UI/Close.png" type="Texture" id=4]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-3.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Image/StagePreview/PreviewStage6-3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=10]
+
+[node name="PracticeDetailPopup" type="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_top = 16
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Control/MarginContainer"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 992.0
+margin_bottom = 584.0
+
+[node name="TitleLabel" type="Label" parent="Control/MarginContainer/VBox"]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 960.0
+margin_bottom = 37.0
+text = "รายละเอียดข้อมูลด่าน"
+align = 1
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/TitleLabel" instance=ExtResource( 5 )]
+palette_color = 5
+set_property = 1
+alpha = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBox"]
+modulate = Color( 1, 1, 1, 0.533333 )
+margin_top = 41.0
+margin_right = 960.0
+margin_bottom = 45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentHBox" type="HBoxContainer" parent="Control/MarginContainer/VBox"]
+margin_top = 49.0
+margin_right = 960.0
+margin_bottom = 568.0
+size_flags_vertical = 3
+custom_constants/separation = 24
+
+[node name="VBox" type="VBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox"]
+margin_right = 256.0
+margin_bottom = 519.0
+custom_constants/separation = 16
+
+[node name="StageNameLabel" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/VBox"]
+self_modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+text = "ลดราคากระชากใจ"
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/VBox/StageNameLabel" instance=ExtResource( 5 )]
+palette_color = 5
+set_property = 2
+alpha = 1.0
+
+[node name="ModeNameLabel" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/VBox/StageNameLabel"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 32.0
+margin_right = 73.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 7 )
+text = "บทประยุกต์"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/VBox/StageNameLabel/ModeNameLabel" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 2
+alpha = 1.0
+
+[node name="PreviewTexture" type="TextureRect" parent="Control/MarginContainer/VBox/ContentHBox/VBox"]
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 256, 150 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="LegendVBox" type="VBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox/VBox"]
+margin_top = 230.0
+margin_right = 256.0
+margin_bottom = 519.0
+size_flags_vertical = 3
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_right = 256.0
+margin_bottom = 30.0
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox/HBoxContainer" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 1
+alpha = 1.0
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 10 )
+text = "สัญลักษณ์ด่าน"
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox"]
+margin_top = 38.0
+margin_right = 256.0
+margin_bottom = 42.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox"]
+margin_top = 50.0
+margin_right = 256.0
+margin_bottom = 289.0
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="Hbox" type="HBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox/ScrollContainer"]
+margin_right = 256.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstanceVBox" type="VBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox/ScrollContainer/Hbox"]
+margin_right = 244.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Empty" type="ReferenceRect" parent="Control/MarginContainer/VBox/ContentHBox/VBox/LegendVBox/ScrollContainer/Hbox"]
+margin_left = 248.0
+margin_right = 256.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBox/ContentHBox"]
+margin_left = 280.0
+margin_right = 960.0
+margin_bottom = 519.0
+size_flags_horizontal = 3
+scroll_horizontal_enabled = false
+
+[node name="DescContentVBox" type="VBoxContainer" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer"]
+margin_right = 680.0
+margin_bottom = 519.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PuzzleHint" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 680.0
+margin_bottom = 37.0
+text = "คำสั่ง"
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/PuzzleHint" instance=ExtResource( 5 )]
+palette_color = 6
+set_property = 2
+alpha = 1.0
+
+[node name="PuzzleHintDesc" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 41.0
+margin_right = 680.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "คำสั่ง"
+autowrap = true
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/PuzzleHintDesc" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 2
+alpha = 1.0
+
+[node name="HowToPlay" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 70.0
+margin_right = 680.0
+margin_bottom = 107.0
+text = "วิธีการเล่น"
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/HowToPlay" instance=ExtResource( 5 )]
+palette_color = 6
+set_property = 2
+alpha = 1.0
+
+[node name="HowToPlayDesc" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 111.0
+margin_right = 680.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "วิธีการเล่น"
+autowrap = true
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/HowToPlayDesc" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 2
+alpha = 1.0
+
+[node name="Condition" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 140.0
+margin_right = 680.0
+margin_bottom = 177.0
+text = "เงื่อนไข"
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/Condition" instance=ExtResource( 5 )]
+palette_color = 6
+set_property = 2
+alpha = 1.0
+
+[node name="ConditionDesc" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 181.0
+margin_right = 680.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "เงื่อนไข"
+autowrap = true
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/ConditionDesc" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 2
+alpha = 1.0
+
+[node name="Difficulty" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_top = 210.0
+margin_right = 680.0
+margin_bottom = 247.0
+text = "ระดับความยาก"
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/Difficulty" instance=ExtResource( 5 )]
+palette_color = 6
+set_property = 2
+alpha = 1.0
+
+[node name="DifficultyDesc" type="Label" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_top = 251.0
+margin_right = 680.0
+margin_bottom = 276.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "ระดับความยาก"
+autowrap = true
+
+[node name="ColorPaletteSetter" parent="Control/MarginContainer/VBox/ContentHBox/ScrollContainer/DescContentVBox/DifficultyDesc" instance=ExtResource( 5 )]
+palette_color = 7
+set_property = 2
+alpha = 1.0
+
+[node name="Close" type="TextureRect" parent="Control"]
+self_modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Control/Close" instance=ExtResource( 5 )]
+palette_color = 6
+set_property = 2
+alpha = 1.0
+
+[node name="HitboxButton" type="Button" parent="Control/Close"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 48.0
+mouse_default_cursor_shape = 2
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Close/HitboxButton" to="." method="_on_HitboxButton_pressed"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/DialogBox/Scene/DialogBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Chapter/Ch1/ch1-2/Ch1Scene3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Chapter/Ch1/ch1-2/EvenCh1Scene3.gd" type="Script" id=3]
+[ext_resource path="res://src/Chapter/Ch1/ch1-2/DalogBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/DialogBox/Scene/DialogBoxV2.tscn" type="PackedScene" id=5]
+
+[node name="even" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Scene3" parent="." instance=ExtResource( 2 )]
+
+[node name="DialoBox" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 37.3757, 58.733 )
+
+[node name="DialogBox2" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 47.5681, -85.6229 )
+
+[node name="DialogBox3" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 35.0954, 57.082 )
+
+[node name="DialogBox4" parent="." instance=ExtResource( 4 )]

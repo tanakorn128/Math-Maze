@@ -1,0 +1,252 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=3]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/GameLog/GameLogPanel/GameLogPanel.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/ButtonRound.tres" type="StyleBox" id=7]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/ButtonRoundPressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://Assets/Image/UI/Log.png" type="Texture" id=9]
+
+[node name="GameLogPanel" type="Panel"]
+margin_right = 832.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 160 )
+rect_clip_content = true
+mouse_filter = 1
+theme = ExtResource( 3 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="." instance=ExtResource( 6 )]
+palette_color = 8
+set_property = 2
+
+[node name="LogBgTex" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 0.0470588 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -104.0
+margin_right = 144.0
+margin_bottom = 24.0
+rect_rotation = -15.1113
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_right = -32.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameModeTitle" type="Label" parent="VBox"]
+self_modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_right = 768.0
+margin_bottom = 35.0
+grow_horizontal = 2
+rect_min_size = Vector2( 0, 35 )
+custom_fonts/font = ExtResource( 2 )
+text = "โหมดธรรมดา"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/GameModeTitle" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 2
+
+[node name="GameLogIDHBox" type="HBoxContainer" parent="VBox/GameModeTitle"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 135.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/GameModeTitle/GameLogIDHBox" instance=ExtResource( 6 )]
+palette_color = 6
+set_property = 1
+
+[node name="Label" type="Label" parent="VBox/GameModeTitle/GameLogIDHBox"]
+margin_top = 1.0
+margin_right = 52.0
+margin_bottom = 38.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+text = "เกมที่"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBox/GameModeTitle/GameLogIDHBox"]
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 135.0
+margin_bottom = 38.0
+grow_horizontal = 2
+text = "log_no"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+margin_top = 35.0
+margin_right = 768.0
+margin_bottom = 39.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreInfoHBox" type="HBoxContainer" parent="VBox"]
+margin_top = 39.0
+margin_right = 768.0
+margin_bottom = 117.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="VBox/ScoreInfoHBox"]
+self_modulate = Color( 0.247059, 0.713726, 0.0941176, 1 )
+margin_right = 708.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.247059 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "1,526 คะแนน"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/ScoreInfoHBox/ScoreLabel" instance=ExtResource( 6 )]
+palette_color = 10
+set_property = 2
+
+[node name="DetailBtn" type="Button" parent="VBox/ScoreInfoHBox"]
+self_modulate = Color( 0, 0.705882, 0.847059, 1 )
+margin_left = 712.0
+margin_top = 11.0
+margin_right = 768.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 56, 56 )
+mouse_filter = 1
+size_flags_vertical = 4
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBox/ScoreInfoHBox/DetailBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "i"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/ScoreInfoHBox/DetailBtn" instance=ExtResource( 6 )]
+palette_color = 2
+set_property = 2
+
+[node name="TotalWinDateTImeHBox" type="HBoxContainer" parent="VBox"]
+margin_top = 117.0
+margin_right = 768.0
+margin_bottom = 154.0
+
+[node name="TotalWinsLabel" type="Label" parent="VBox/TotalWinDateTImeHBox"]
+self_modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+margin_right = 195.0
+margin_bottom = 37.0
+text = "เล่นชนะไป 9 ปริศนา"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="VBox/TotalWinDateTImeHBox/TotalWinsLabel" instance=ExtResource( 6 )]
+palette_color = 5
+set_property = 2
+
+[node name="TimestampHBox" type="HBoxContainer" parent="VBox/TotalWinDateTImeHBox"]
+modulate = Color( 0.45098, 0.45098, 0.45098, 1 )
+margin_left = 199.0
+margin_right = 768.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+custom_constants/separation = 8
+
+[node name="ColorPaletteSetter" parent="VBox/TotalWinDateTImeHBox/TimestampHBox" instance=ExtResource( 6 )]
+palette_color = 7
+set_property = 1
+
+[node name="TimestampLabel" type="Label" parent="VBox/TotalWinDateTImeHBox/TimestampHBox"]
+margin_top = 3.0
+margin_right = 434.0
+margin_bottom = 33.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "dd/mm/yyyy hh:ss ณ"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SepLabel" type="Label" parent="VBox/TotalWinDateTImeHBox/TimestampHBox"]
+margin_left = 442.0
+margin_top = 3.0
+margin_right = 451.0
+margin_bottom = 33.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 2 )
+text = "-"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AgoLabel" type="Label" parent="VBox/TotalWinDateTImeHBox/TimestampHBox"]
+margin_left = 459.0
+margin_top = 3.0
+margin_right = 569.0
+margin_bottom = 33.0
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 2 )
+text = "int นาทีที่แล้ว"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimestampUpdateTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+[connection signal="pressed" from="VBox/ScoreInfoHBox/DetailBtn" to="." method="_on_DetailBtn_pressed"]
+[connection signal="timeout" from="TimestampUpdateTimer" to="." method="_on_TimestampUpdateTimer_timeout"]

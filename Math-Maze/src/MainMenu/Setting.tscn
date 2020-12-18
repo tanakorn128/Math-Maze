@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://assets/image/ui/UpArrow.png" type="Texture" id=2]
+[ext_resource path="res://src/MainMenu/Setting.gd" type="Script" id=3]
+[ext_resource path="res://src/MainMenu/background.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 0.75, 0.8 )
+script = ExtResource( 3 )
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1366.0
+margin_bottom = 768.0
+color = Color( 0, 0.643137, 0.858824, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_right = 40.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Button" parent="Tabs"]
+margin_left = 102.02
+margin_top = 53.9716
+margin_right = 328.02
+margin_bottom = 197.972
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tabs/Audio"]
+margin_left = 27.0
+margin_top = 23.0
+margin_right = 203.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0.466667, 0.713726, 1 )
+text = "Audio"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Tabs"]
+margin_left = 55.632
+margin_top = 597.243
+margin_right = 151.632
+margin_bottom = 677.243
+rect_scale = Vector2( 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRec" type="TextureRect" parent="Tabs/Back"]
+modulate = Color( 0, 0.466667, 0.713726, 1 )
+margin_left = 12.9384
+margin_top = 70.569
+margin_right = 76.9384
+margin_bottom = 134.569
+rect_rotation = -90.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Tabs/Audio" to="." method="_on_Audio_pressed"]
+[connection signal="pressed" from="Tabs/Back" to="." method="_on_Button_pressed"]

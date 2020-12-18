@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://assets/countdownProgress/CountDown_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/countdownProgress/CountDown_2.png" type="Texture" id=3]
+[ext_resource path="res://src/mission/m1/Exam.gd" type="Script" id=4]
+[ext_resource path="res://src/mission/m1/countdown.gd" type="Script" id=5]
+[ext_resource path="res://src/DialogBox/Scene/DialogBoxV2.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_color = Color( 0.423529, 0.141176, 0.141176, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = SubResource( 5 )
+
+[node name="Exam" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_left = 6.0
+margin_top = -34.0
+margin_right = 1382.0
+margin_bottom = 761.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="Tabs"]
+modulate = Color( 0, 0.180392, 1, 1 )
+margin_left = 50.0
+margin_top = 533.0
+margin_right = 666.0
+margin_bottom = 616.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tabs/Button1"]
+margin_left = 9.0
+margin_top = 3.0
+margin_right = 618.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12345678912345678912345
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Tabs"]
+modulate = Color( 1, 0.0509804, 0.0509804, 1 )
+margin_left = 707.0
+margin_top = 536.0
+margin_right = 1327.0
+margin_bottom = 619.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tabs/Button2"]
+margin_left = 4.0
+margin_right = 619.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12345678912345678912345
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Tabs"]
+modulate = Color( 0.0745098, 1, 0.180392, 1 )
+margin_left = 50.0
+margin_top = 636.757
+margin_right = 666.0
+margin_bottom = 719.757
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tabs/Button3"]
+margin_left = -1.0
+margin_top = 4.0
+margin_right = 614.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12345678912345678912345
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Tabs"]
+modulate = Color( 0.94902, 1, 0.0705882, 1 )
+margin_left = 707.0
+margin_top = 639.757
+margin_right = 1327.0
+margin_bottom = 722.757
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tabs/Button4"]
+margin_left = 4.0
+margin_top = 1.0
+margin_right = 617.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12345678912345678912345
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="countdown" type="TextureProgress" parent="."]
+margin_left = 369.0
+margin_top = 17.0
+margin_right = 1369.0
+margin_bottom = 57.0
+rect_scale = Vector2( 0.7, 1 )
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="countdown"]
+autostart = true
+
+[node name="Question" type="Label" parent="."]
+margin_left = 151.0
+margin_top = 273.0
+margin_right = 1198.0
+margin_bottom = 479.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.854902, 0.854902, 1 )
+text = "1234567891234567891234545454545454545454545454545454545454545454545454545454545
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialoBox" parent="." instance=ExtResource( 6 )]
+[connection signal="pressed" from="Tabs/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Tabs/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Tabs/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Tabs/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="timeout" from="countdown/Timer" to="countdown" method="_on_Timer_timeout"]

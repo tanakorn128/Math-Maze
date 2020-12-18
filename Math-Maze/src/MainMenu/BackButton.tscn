@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
+[ext_resource path="res://assets/image/ui/UpArrow.png" type="Texture" id=2]
+[ext_resource path="res://src/MainMenu/Display.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Tabs" type="Tabs" parent="."]
+margin_right = 40.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Tabs"]
+margin_left = 55.632
+margin_top = 597.243
+margin_right = 151.632
+margin_bottom = 677.243
+rect_scale = Vector2( 2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Tabs/Back"]
+modulate = Color( 0, 0.466667, 0.713726, 1 )
+margin_left = 12.938
+margin_top = 70.569
+margin_right = 76.938
+margin_bottom = 134.569
+rect_rotation = -90.0
+texture = ExtResource( 2 )
+[connection signal="pressed" from="Tabs/Back" to="." method="_on_Back_pressed"]

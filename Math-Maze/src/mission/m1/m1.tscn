@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/mission/m1/Exam.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/mission/m1/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/mission/m1/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/mission/m1/DialogBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/StartGame/Scene/background.tscn" type="PackedScene" id=5]
+
+[node name="m1" type="Node2D"]
+
+[node name="BackGround" parent="." instance=ExtResource( 5 )]
+
+[node name="Exam" parent="." instance=ExtResource( 1 )]
+position = Vector2( -30.204, -7.55103 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1004.28, -15.102 )
+
+[node name="DialogBox" parent="." instance=ExtResource( 4 )]

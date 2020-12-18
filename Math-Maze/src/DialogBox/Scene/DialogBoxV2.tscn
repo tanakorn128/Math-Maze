@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/DialogBox/Script/DialogBoxV2.gd" type="Script" id=1]
+[ext_resource path="res://src/DialogBox/img/Dialog Box.png" type="Texture" id=2]
+[ext_resource path="res://src/DialogBox/img/SpaceBar.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Present_Visible"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = SubResource( 4 )
+
+[node name="DialoBox" type="Node2D"]
+visible = false
+script = ExtResource( 1 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 664.433, 574.023 )
+scale = Vector2( 3.21777, 2.07635 )
+texture = ExtResource( 2 )
+
+[node name="SpaceBar" type="Sprite" parent="."]
+position = Vector2( 1191.39, 672.895 )
+scale = Vector2( 0.279263, 0.331537 )
+texture = ExtResource( 3 )
+
+[node name="Text" type="Label" parent="."]
+margin_left = 129.579
+margin_top = 518.543
+margin_right = 1217.58
+margin_bottom = 667.543
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et varius velit, eu vestibulum erat. Etiam lobortis tellus malesuada sem "
+autowrap = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text"]
+anims/Present_Visible = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1115.69
+margin_top = 631.882
+margin_right = 1733.69
+margin_bottom = 799.882
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SpaceBar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="animation_finished" from="Text/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

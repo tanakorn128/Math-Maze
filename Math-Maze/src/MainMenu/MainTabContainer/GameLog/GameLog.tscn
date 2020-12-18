@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/GameLog/GameLogDetailPopup/GameLogDetailPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Class/CustomNode/DimColorRect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Image/UI/Close.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H3.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/GameLog/GameLog.gd" type="Script" id=8]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=9]
+
+[node name="GameLog" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -384.0
+margin_top = 32.0
+margin_right = -128.0
+margin_bottom = 96.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 7 )
+text = "ประวัติการเล่น"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="."]
+self_modulate = Color( 1, 0.458824, 0.0941176, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = 96.0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="CloseButton" instance=ExtResource( 9 )]
+palette_color = 11
+set_property = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.0625
+anchor_top = 0.173333
+anchor_right = 0.9375
+anchor_bottom = 1.0
+custom_constants/margin_right = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Control" type="Control" parent="MarginContainer"]
+margin_left = 32.0
+margin_right = 864.0
+margin_bottom = 496.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_horizontal_enabled = false
+scroll_deadzone = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer/Control/ScrollContainer"]
+margin_right = 832.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LogVBox" type="VBoxContainer" parent="MarginContainer/Control/ScrollContainer/HBox"]
+margin_right = 820.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataVBox" type="VBoxContainer" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox"]
+margin_right = 820.0
+custom_constants/separation = 24
+
+[node name="DisplayItemHBox" type="HBoxContainer" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox"]
+visible = false
+margin_top = 4.0
+margin_right = 832.0
+margin_bottom = 41.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="DisplayLabel" type="Label" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox/DisplayItemHBox"]
+margin_left = 275.0
+margin_right = 435.0
+margin_bottom = 37.0
+text = "แสดงผลทั้งหมด"
+
+[node name="Value" type="Label" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox/DisplayItemHBox"]
+margin_left = 443.0
+margin_right = 473.0
+margin_bottom = 37.0
+text = "int"
+
+[node name="ItemLabel" type="Label" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox/DisplayItemHBox"]
+margin_left = 481.0
+margin_right = 556.0
+margin_bottom = 37.0
+text = "รายการ"
+
+[node name="EmptyBox" type="ReferenceRect" parent="MarginContainer/Control/ScrollContainer/HBox/LogVBox"]
+margin_top = 4.0
+margin_right = 820.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 32 )
+
+[node name="EmptyBox" type="ReferenceRect" parent="MarginContainer/Control/ScrollContainer/HBox"]
+margin_left = 824.0
+margin_right = 832.0
+margin_bottom = 496.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="NoDataLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -38.5
+margin_right = 105.5
+margin_bottom = 38.5
+text = "ไม่พบข้อมูล
+ลองเล่นสักเกมให้จบสิ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DimColorRect" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="GameLogDetailPopup" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.15625
+anchor_top = 0.106667
+anchor_right = 0.84375
+anchor_bottom = 0.893333
+[connection signal="hide" from="." to="." method="_on_GameLog_hide"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="popup_hide" from="GameLogDetailPopup" to="." method="_on_GameLogDetailPopup_popup_hide"]

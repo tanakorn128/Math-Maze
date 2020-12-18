@@ -1,0 +1,312 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H4.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Image/UI/MathgicalRushBg1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Image/UI/FastClock.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Image/UI/MathgicalRushBg2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Image/UI/MathgicalRushFill2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Image/UI/MathgicalRush1Fill.png" type="Texture" id=7]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/Welcome/Welcome.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flashing"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.870588, 0.870588, 0.870588, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RectMargin:custom_constants/margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -192, 32 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RectMargin:custom_constants/margin_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -192, 32 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RectMargin:custom_constants/margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -192, 32 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RectMargin:custom_constants/margin_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -192, 32 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Title:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("StartLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Welcome" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RectMargin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 0.000854492
+custom_constants/margin_right = 32
+custom_constants/margin_top = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rect" type="ReferenceRect" parent="RectMargin"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 992.0
+margin_bottom = 568.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="ColorRect" parent="RectMargin/Rect"]
+anchor_right = 1.0
+margin_bottom = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="ColorRect" parent="RectMargin/Rect"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_bottom = 0.0010376
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bottom" type="ColorRect" parent="RectMargin/Rect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="ColorRect" parent="RectMargin/Rect"]
+anchor_bottom = 1.0
+margin_right = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_scale = Vector2( 0.9, 0.9 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FastClockBg" type="TextureRect" parent="Title"]
+self_modulate = Color( 0, 0, 0, 0.345098 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -168.0
+margin_top = 2.66713
+margin_right = -88.0
+margin_bottom = 82.6671
+rect_rotation = -4.37737
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FastClockFill" type="TextureRect" parent="Title/FastClockBg"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -43.1971
+margin_top = -7.40121
+margin_right = 36.8029
+margin_bottom = 72.5988
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexBg" type="TextureRect" parent="Title"]
+self_modulate = Color( 0, 0, 0, 0.345098 )
+margin_left = -208.0
+margin_top = -93.3329
+margin_right = 207.0
+margin_bottom = -5.33287
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexFill" type="TextureRect" parent="Title/TitleTexBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = -4.0
+margin_bottom = -8.0
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexBg2" type="TextureRect" parent="Title"]
+self_modulate = Color( 0, 0, 0, 0.345098 )
+margin_left = -112.0
+margin_top = 2.66713
+margin_right = 163.0
+margin_bottom = 76.6671
+rect_rotation = -3.24978
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexFill2" type="TextureRect" parent="Title/TitleTexBg2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = -1.0
+margin_bottom = -13.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Title"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -165.5
+margin_top = 66.6671
+margin_right = 160.5
+margin_bottom = 130.667
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.435294 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+text = "คณิตพิชิตเวลา (ป.๔-๖)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -95.9991
+margin_right = 20.0
+margin_bottom = -58.9991
+grow_horizontal = 2
+text = "แตะเพื่อเริ่ม"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anim" type="AnimationPlayer" parent="StartLabel"]
+autoplay = "Flashing"
+anims/Flashing = SubResource( 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "Show"
+anims/Show = SubResource( 2 )
+[connection signal="gui_input" from="RectMargin" to="." method="_on_RectMargin_gui_input"]

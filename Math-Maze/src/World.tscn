@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Chapter/Ch1/ch1-2/ch1.tscn" type="PackedScene" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="ch1" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,139 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=1]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/NameEntry/NameEntry.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=4]
+
+[node name="NameEntry" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -256.0
+margin_top = 64.0
+margin_right = 257.0
+margin_bottom = 320.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Vbox"]
+margin_right = 513.0
+margin_bottom = 37.0
+text = "กรุณากรอกชื่อผู้เล่น"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Vbox"]
+margin_top = 41.0
+margin_right = 513.0
+margin_bottom = 102.0
+grow_horizontal = 2
+max_length = 15
+clear_button_enabled = true
+placeholder_text = "กรอกชื่อเล่นที่นี่ (มากสุด 15 ตัวอักษร)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorLabel" type="Label" parent="Vbox"]
+self_modulate = Color( 1, 0, 0.223529, 1 )
+margin_top = 106.0
+margin_right = 513.0
+margin_bottom = 143.0
+text = "*error-msg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/ErrorLabel" instance=ExtResource( 4 )]
+palette_color = 12
+set_property = 2
+alpha = 1.0
+
+[node name="Desc" type="Label" parent="Vbox"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_top = 147.0
+margin_right = 513.0
+margin_bottom = 177.0
+custom_fonts/font = ExtResource( 3 )
+text = "(ชื่อสามารถเปลี่ยนได้ภายหลัง)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/Desc" instance=ExtResource( 4 )]
+palette_color = 9
+set_property = 2
+alpha = 1.0
+
+[node name="Empty" type="ReferenceRect" parent="Vbox"]
+margin_top = 181.0
+margin_right = 513.0
+margin_bottom = 197.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="Desc2" type="Label" parent="Vbox"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_top = 201.0
+margin_right = 513.0
+margin_bottom = 264.0
+custom_fonts/font = ExtResource( 3 )
+text = "ข้อสำคัญ: ชื่อเล่นของคุณจะปรากฎในกระดานคะแนน เมื่อทำการเข้าสู่ระบบเป็นที่เรียบร้อยแล้ว"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/Desc2" instance=ExtResource( 4 )]
+palette_color = 9
+set_property = 2
+alpha = 1.0
+
+[node name="Empty2" type="ReferenceRect" parent="Vbox"]
+margin_top = 268.0
+margin_right = 513.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 0, 48 )
+
+[node name="SaveButton" type="Button" parent="Vbox"]
+self_modulate = Color( 0.247059, 0.713726, 0.0941176, 1 )
+margin_left = 160.0
+margin_top = 320.0
+margin_right = 352.0
+margin_bottom = 373.0
+grow_horizontal = 2
+rect_min_size = Vector2( 192, 0 )
+size_flags_horizontal = 4
+
+[node name="ColorPaletteSetter" parent="Vbox/SaveButton" instance=ExtResource( 4 )]
+palette_color = 10
+set_property = 2
+alpha = 1.0
+
+[node name="Label" type="Label" parent="Vbox/SaveButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "ตกลง"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/SaveButton/Label" instance=ExtResource( 4 )]
+palette_color = 0
+set_property = 0
+alpha = 1.0
+[connection signal="text_changed" from="Vbox/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="Vbox/SaveButton" to="." method="_on_SaveButton_pressed"]

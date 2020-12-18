@@ -1,0 +1,159 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Resource/Theme/KanidKidKid/KanidKidKid.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Image/UI/Close.png" type="Texture" id=3]
+[ext_resource path="res://Src/Class/Extended/ColorPaletteSetter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-H3.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Resource/FontsRes/Kanit-Regular-Body-2.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Src/Scene/MainMenu/MainTabContainer/GameMode/GameMode.gd" type="Script" id=7]
+
+[node name="GameMode" type="Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -384.0
+margin_top = 32.0
+margin_right = -128.0
+margin_bottom = 96.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+text = "เลือกโหมด"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="."]
+self_modulate = Color( 1, 0.458824, 0.0941176, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = 96.0
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="CloseButton" instance=ExtResource( 4 )]
+palette_color = 11
+set_property = 2
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -95.5
+margin_right = 128.0
+margin_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PracticeButton" type="Button" parent="Vbox"]
+self_modulate = Color( 0, 0.466667, 0.713726, 1 )
+margin_right = 256.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/PracticeButton" instance=ExtResource( 4 )]
+palette_color = 1
+set_property = 2
+
+[node name="Label" type="Label" parent="Vbox/PracticeButton"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "ฝึกหัด"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/PracticeButton/Label" instance=ExtResource( 4 )]
+palette_color = 9
+set_property = 2
+
+[node name="NormalButton" type="Button" parent="Vbox"]
+self_modulate = Color( 0.247059, 0.713726, 0.0941176, 1 )
+margin_top = 112.0
+margin_right = 256.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/NormalButton" instance=ExtResource( 4 )]
+palette_color = 10
+set_property = 2
+
+[node name="Label" type="Label" parent="Vbox/NormalButton"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "เล่นคนเดียว"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPaletteSetter" parent="Vbox/NormalButton/Label" instance=ExtResource( 4 )]
+palette_color = 9
+set_property = 2
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -435.0
+margin_top = -88.0
+margin_right = 436.0
+margin_bottom = -25.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 6 )
+text = "*หน้าจอเมนูเลือกโหมดจะถูกเปลี่ยนแปลงให้เป็นรูปแบบ Horizontal Card List ในเวอร์ชันถัดไป
+เพื่อให้ง่ายต่อการเลือกโหมด"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Vbox/PracticeButton" to="." method="_on_PracticeButton_pressed"]
+[connection signal="pressed" from="Vbox/NormalButton" to="." method="_on_NormalButton_pressed"]
