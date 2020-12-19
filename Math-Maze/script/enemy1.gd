@@ -122,15 +122,15 @@ func alSprite(value):
 	if value == 3:
 		$Navigation2D/KinematicBody2D/AnimatedSprite.play("three")
 	if value == 4:
-		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss1")
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss1") # -3263.135,-2113.65
 	if value == 5:
-		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss2")
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss2") # -9236.773,-303.457
 	if value == 6:
-		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss3")
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss3") # -3217.88,2841.754
 	if value == 7:
-		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss4")
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss4") # 10042.642,-675.718
 	if value == 8:
-		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss5")
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss5") # 7754.201,-2794.644
 	pass
 func move_start(value):
 	$Navigation2D.move_start(value)

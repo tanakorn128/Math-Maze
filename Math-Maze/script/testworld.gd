@@ -56,7 +56,18 @@ func enemy(pos):
 	if pos == 10:
 		inst_enemy(4429.099,259.094,1,true)
 	pass
-
+func boss(value):
+	if value == 1:
+		inst_enemy(-3263.135,-2113.65,4,false)
+	if value == 2:
+		inst_enemy(-9236.773,-303.457,5,false)
+	if value == 3:
+		inst_enemy(-3217.88,2841.754,6,false)
+	if value == 4:
+		inst_enemy(10042.642,-675.718,7,false)
+	if value == 5:
+		inst_enemy(7754.201,-2794.644,8,false)
+	pass
 func put_enemy():
 	enemy(1)
 	enemy(2)
@@ -68,6 +79,11 @@ func put_enemy():
 	enemy(8)
 	enemy(9)
 	enemy(10)
+	boss(1)
+	boss(2)
+	boss(3)
+	boss(4)
+	boss(5)
 	pass
 
 func end():

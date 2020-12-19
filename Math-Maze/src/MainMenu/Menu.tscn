@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
 [ext_resource path="res://src/MainMenu/background.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/image/ui/Setting.png" type="Texture" id=5]
 [ext_resource path="res://assets/image/ui/Book.png" type="Texture" id=6]
 [ext_resource path="res://src/MainMenu/test.gd" type="Script" id=7]
+[ext_resource path="res://assets/All Assets/logo/O8_Logo_Full.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -206,6 +207,11 @@ autostart = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 641.465, 261.156 )
+scale = Vector2( 0.178901, 0.154291 )
+texture = ExtResource( 8 )
 [connection signal="pressed" from="Tabs/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Tabs/SettingButton" to="." method="_on_SettingButton_pressed"]
 [connection signal="pressed" from="Tabs/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]

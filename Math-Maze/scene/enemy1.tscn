@@ -20,6 +20,26 @@
 [ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/O6.png" type="Texture" id=18]
 [ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/H1.png" type="Texture" id=19]
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 128, 57 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 46 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 128, 52 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 128, 52 )
+
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 14 )
@@ -27,41 +47,41 @@ region = Rect2( 0, 0, 128, 69 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 46 )
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 128, 52 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 128, 52 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 19 )
-region = Rect2( 0, 0, 128, 57 )
-
-[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 64, 56 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "boss5",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "boss2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "boss3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "boss4",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "boss1",
@@ -69,44 +89,24 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "boss2",
+"name": "three",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "boss3",
+"name": "one",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ) ],
 "loop": true,
-"name": "boss4",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "boss5",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "one",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
 "name": "two",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ) ],
-"loop": true,
-"name": "three",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 210.58, 126.828 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 114.776, 114.748 )
 
 [node name="enemy1" type="Node2D"]
@@ -126,7 +126,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/KinematicBody2D"]
 position = Vector2( 0, 8.48529 )
 scale = Vector2( 1.4, 1.4 )
-frames = SubResource( 2 )
+frames = SubResource( 9 )
 animation = "boss5"
 
 [node name="RayCast2D" type="RayCast2D" parent="Navigation2D/KinematicBody2D"]
@@ -179,7 +179,7 @@ scale = Vector2( 0.7, 0.7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="battle/BackGround/Area2D"]
 position = Vector2( 3.18408, 10.4694 )
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
 [node name="Area2D2" type="Area2D" parent="battle/BackGround"]
 position = Vector2( 0.00508404, -0.0575438 )
@@ -187,7 +187,7 @@ position = Vector2( 0.00508404, -0.0575438 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="battle/BackGround/Area2D2"]
 position = Vector2( 161.444, 347.88 )
 scale = Vector2( 0.7, 0.7 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
