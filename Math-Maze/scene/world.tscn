@@ -378,6 +378,7 @@ tile_data = PoolIntArray( -43449022, 1, 0, -43448991, 3, 0, -43448976, 3, 0, -43
 [node name="system2" parent="." instance=ExtResource( 14 )]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3687.87, 316.111 )
+visible = false
+position = Vector2( 615.518, -2230.71 )
 scale = Vector2( 3.54454, 3.29426 )
 texture = ExtResource( 3 )

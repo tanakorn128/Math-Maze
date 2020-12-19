@@ -114,3 +114,25 @@ func queue_free_enemy():
 		global.speed_player = 15000
 	pass
 
+func alSprite(value):
+	if value == 1:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("one")
+	if value == 2:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("two")
+	if value == 3:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("three")
+	if value == 4:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss1")
+	if value == 5:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss2")
+	if value == 6:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss3")
+	if value == 7:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss4")
+	if value == 8:
+		$Navigation2D/KinematicBody2D/AnimatedSprite.play("boss5")
+	pass
+func move_start(value):
+	$Navigation2D.move_start(value)
+
+

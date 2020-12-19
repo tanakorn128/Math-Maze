@@ -64,3 +64,7 @@ func shoot(value):
 	add_child(inst)
 	inst.shoot2_start(value,true)
 
+
+
+
+

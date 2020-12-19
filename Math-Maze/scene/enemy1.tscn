@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/D4.png" type="Texture" id=1]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/E1.png" type="Texture" id=1]
 [ext_resource path="res://script/enemy1.gd" type="Script" id=2]
 [ext_resource path="res://script/KinematicBody2D_enemy1.gd" type="Script" id=3]
 [ext_resource path="res://script/Navigation2Denemy1.gd" type="Script" id=4]
@@ -12,17 +12,94 @@
 [ext_resource path="res://script/enemy1_bullet1.gd" type="Script" id=10]
 [ext_resource path="res://script/bullet2.gd" type="Script" id=11]
 [ext_resource path="res://script/save_game.gd" type="Script" id=12]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/F1.png" type="Texture" id=13]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/D4.png" type="Texture" id=14]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/O5.png" type="Texture" id=15]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/G1.png" type="Texture" id=16]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/O4.png" type="Texture" id=17]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/O6.png" type="Texture" id=18]
+[ext_resource path="res://assets/All Assets/Character/Character1-2_Object1-3/Character1-2_Object1-3_2/H1.png" type="Texture" id=19]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 128, 69 )
+
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 414, 222 )
+region = Rect2( 0, 0, 64, 46 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 128, 52 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 128, 52 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 128, 57 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 64, 56 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "idle",
+"name": "boss1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "boss2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "boss3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "boss4",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "boss5",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "one",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "three",
 "speed": 5.0
 } ]
 
@@ -47,9 +124,10 @@ __meta__ = {
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/KinematicBody2D"]
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 0, 8.48529 )
+scale = Vector2( 1.4, 1.4 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "boss5"
 
 [node name="RayCast2D" type="RayCast2D" parent="Navigation2D/KinematicBody2D"]
 position = Vector2( -70.7969, 12.421 )
@@ -64,7 +142,7 @@ scale = Vector2( 7, 2.4 )
 enabled = true
 
 [node name="HUD" parent="Navigation2D/KinematicBody2D" instance=ExtResource( 5 )]
-position = Vector2( -37.4577, -55.4374 )
+position = Vector2( -38.872, -66.7511 )
 scale = Vector2( 0.4, 0.5 )
 
 [node name="battle" type="Node" parent="."]
